@@ -1,0 +1,63 @@
+# encoding: utf-8
+
+###
+# NB: for local testing run like:
+#
+# 1.9.x: ruby -Ilib lib/logutils.rb
+
+# core and stlibs
+
+require 'yaml'
+require 'pp'
+require 'logger'
+require 'fileutils'
+
+
+# rubygems / 3rd party libs
+
+require 'active_record'   ## todo: add sqlite3? etc.
+
+
+# our own code
+
+require 'logutils/version'
+
+require 'logutils/models'
+require 'logutils/schema'       # NB: requires sportdb/models (include SportDB::Models)
+require 'logutils/deleter'
+
+require 'logutils/logger'
+
+
+module LogUtils
+
+  def self.banner
+    "logutils #{VERSION} on Ruby #{RUBY_VERSION} (#{RUBY_RELEASE_DATE}) [#{RUBY_PLATFORM}]"
+  end
+
+  def self.root
+    "#{File.expand_path( File.dirname(File.dirname(__FILE__)) )}"
+  end
+
+  def self.config_path
+    "#{root}/config"
+  end
+
+  def self.create
+    CreateDB.up
+  end
+
+  # delete ALL records (use with care!)
+  def self.delete!
+    puts '*** deleting log table records/data...'
+    Deleter.new.run
+  end # method delete!
+
+
+  def self.stats
+  end
+
+end  # module LogUtils
+
+## say hello
+puts LogUtils.banner
