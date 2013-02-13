@@ -2,6 +2,36 @@
 
 Another Logger in Ruby
 
+Logging levels:
+
+* DEBUG
+* INFO
+* WARN
+* ERROR
+* FATAL
+
+
+## Dev Notes
+
+### How to get process id (pid)?
+
+* Yell uses   Process.pid
+* Logging ???
+* Log4r
+
+### How to get thread id (tid)?
+
+* Yell uses   Thread.current.object_id
+* Logging ???
+* Log4r ???
+
+### How to get timestamp (ts)?
+
+* Yell uses   Time.now
+
+### How to get filename, line, method?
+
+use caller ?
 
 ## Alternatives
 

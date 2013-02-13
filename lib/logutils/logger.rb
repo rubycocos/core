@@ -1,7 +1,7 @@
 
 module LogUtils
   
-  module Severity
+  module Level
     DEBUG = 'debug'
     INFO  = 'info'
     WARN  = 'warn'
@@ -9,39 +9,63 @@ module LogUtils
     FATAL = 'fatal'
   end
   
+  class Event
+    def initialize( level, msg )
+      @level = level
+      @msg   = msg
+      
+      @pid   = Process.pid
+      @tid   = Thread.current.object_id
+      
+      @ts    = Time.now
+    end
+
+    attr_reader :level
+    attr_reader :msg
+    attr_reader :pid   # process_id
+    attr_reader :tid   # thread_id
+    attr_reader :ts    # timestamp
+
+
+    def to_s()
+      "[#{level}-#{pid}.#{tid}] #{msg}"
+    end
+
+  end # class Event
+  
   
   class Logger
     include LogDB::Models
-    include Severity
+    include Level
     
     def debug( msg )
-      log( DEBUG, msg )
+      write( Event.new( DEBUG, msg ) )
     end
     
     def info( msg )
-      log( INFO, msg )
+      write( Event.new( INFO, msg ) )
     end
     
     def warn( msg )
-      log( WARN, msg )
+      write( Event.new( WARN, msg ) )
     end
     
     def error( msg )
-      log( ERROR, msg )
+      write( Event.new( ERROR, msg ) )
     end
     
     def fatal( msg )
-      log( FATAL, msg )
+      write( Event.new( FATAL, msg ) )
     end
 
   private
 
-    def log( kind, msg )
-      puts "[#{kind}] #{msg}"
+    def write( ev )
+      puts ev.to_s
       
-      if( [FATAL, ERROR, WARN].include?( kind ) )
+      if( [FATAL, ERROR, WARN].include?( ev.level ) )
         ## create log entry in db table (logs)
-        Log.create!( kind: kind, msg: msg )
+        Log.create!( level: ev.level, msg: ev.msg, pid: ev.pid, tid: ev.tid, ts: ev.ts )
       end
     end
     
