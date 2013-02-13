@@ -1,9 +1,13 @@
 # encoding: utf-8
 
-module LogUtils::Models
+module LogDB
+  module Models
+
 
 class Log < ActiveRecord::Base
   
 end # class Log
 
-end # module LogUtils::Models
+
+  end # module Models
+end # module LogDB

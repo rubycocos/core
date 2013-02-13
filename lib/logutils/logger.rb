@@ -2,7 +2,7 @@
 module LogUtils
   
   class Logger
-    
+    include LogDB::Models
     
     def debug( msg )
       log( 'debug', msg )
@@ -28,13 +28,14 @@ module LogUtils
     end
     
     private
- 
+
     def log_db( kind, msg )
-    
+      ## create log entry in db table (logs)
+      Log.create!( kind: kind, msg: msg )
     end
     
     def log( kind, msg )
-      puts "[#{kind}], #{msg}"
+      puts "[#{kind}] #{msg}"
     end
     
   end # class Logger

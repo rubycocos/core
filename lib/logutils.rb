@@ -22,6 +22,10 @@ require 'active_record'   ## todo: add sqlite3? etc.
 
 require 'logutils/version'
 
+##todo: move to logutils/db/models
+#                       /db/schema
+#                       /db/deleter
+
 require 'logutils/models'
 require 'logutils/schema'       # NB: requires sportdb/models (include SportDB::Models)
 require 'logutils/deleter'
@@ -31,8 +35,13 @@ require 'logutils/logger'
 
 module LogUtils
 
+end  # module LogUtils
+
+
+module LogDB
+
   def self.banner
-    "logutils #{VERSION} on Ruby #{RUBY_VERSION} (#{RUBY_RELEASE_DATE}) [#{RUBY_PLATFORM}]"
+    "logdb #{LogUtils::VERSION} on Ruby #{RUBY_VERSION} (#{RUBY_RELEASE_DATE}) [#{RUBY_PLATFORM}]"
   end
 
   def self.root
@@ -57,7 +66,8 @@ module LogUtils
   def self.stats
   end
 
-end  # module LogUtils
+
+end # module LogDB
 
 ## say hello
-puts LogUtils.banner
+puts LogDB.banner

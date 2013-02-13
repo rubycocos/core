@@ -1,8 +1,8 @@
 
-module LogUtils
+module LogDB
 
   class Deleter    
-    include LogUtils::Models
+    include LogDB::Models
 
     def run( args=[] )
       # for now delete all tables
@@ -12,4 +12,4 @@ module LogUtils
     
   end # class Deleter
   
-end # module LogUtils
+end # module LogDB

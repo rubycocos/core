@@ -1,5 +1,5 @@
 
-module LogUtils
+module LogDB
 
 class CreateDB   ## fix/todo: change to ActiveRecord::Migration why? why not?
 
@@ -21,4 +21,4 @@ end # method up
 
 end # class CreateDB
 
-end # module LogUtils
+end # module LogDB
