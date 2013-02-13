@@ -22,13 +22,9 @@ require 'active_record'   ## todo: add sqlite3? etc.
 
 require 'logutils/version'
 
-##todo: move to logutils/db/models
-#                       /db/schema
-#                       /db/deleter
-
-require 'logutils/models'
-require 'logutils/schema'       # NB: requires sportdb/models (include SportDB::Models)
-require 'logutils/deleter'
+require 'logutils/db/models'
+require 'logutils/db/schema'
+require 'logutils/db/deleter'
 
 require 'logutils/logger'
 
@@ -64,6 +60,7 @@ module LogDB
 
 
   def self.stats
+    # to be done
   end
 
 

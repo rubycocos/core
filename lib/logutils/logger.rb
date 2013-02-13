@@ -1,44 +1,50 @@
 
 module LogUtils
   
+  module Severity
+    DEBUG = 'debug'
+    INFO  = 'info'
+    WARN  = 'warn'
+    ERROR = 'error'
+    FATAL = 'fatal'
+  end
+  
+  
   class Logger
     include LogDB::Models
+    include Severity
     
     def debug( msg )
-      log( 'debug', msg )
+      log( DEBUG, msg )
     end
     
     def info( msg )
-      log( 'info', msg )
+      log( INFO, msg )
     end
     
     def warn( msg )
-      log( 'warn', msg )
-      log_db( 'warn', msg )
+      log( WARN, msg )
     end
     
     def error( msg )
-      log( 'error', msg )
-      log_db( 'error', msg )
+      log( ERROR, msg )
     end
     
     def fatal( msg )
-      log( 'fatal', msg )
-      log_db( 'fatal', msg )
+      log( FATAL, msg )
     end
-    
-    private
 
-    def log_db( kind, msg )
-      ## create log entry in db table (logs)
-      Log.create!( kind: kind, msg: msg )
-    end
-    
+  private
+
     def log( kind, msg )
       puts "[#{kind}] #{msg}"
+      
+      if( [FATAL, ERROR, WARN].include?( kind ) )
+        ## create log entry in db table (logs)
+        Log.create!( kind: kind, msg: msg )
+      end
     end
     
   end # class Logger
-  
   
 end # module LogUtils
