@@ -2,36 +2,24 @@
 
 Another Logger in Ruby
 
+* [github.com/geraldb/logutils](https://github.com/geraldb/logutils)
+
+## Usage
+
 Logging levels:
 
-* DEBUG
-* INFO
-* WARN
-* ERROR
-* FATAL
+DEBUG < INFO < WARN < ERROR < FATAL
 
+use methods e.g.
 
-## Dev Notes
+    logger = LoggerUtils::Logger.new
+    
+    logger.debug "msg"
+    logger.info "another msg"
+    logger.warn "another msg"
+    logger.error "another msg"
+    logger.fatal "another msg"
 
-### How to get process id (pid)?
-
-* Yell uses   Process.pid
-* Logging ???
-* Log4r
-
-### How to get thread id (tid)?
-
-* Yell uses   Thread.current.object_id
-* Logging ???
-* Log4r ???
-
-### How to get timestamp (ts)?
-
-* Yell uses   Time.now
-
-### How to get filename, line, method?
-
-use caller ?
 
 ## Alternatives
 
