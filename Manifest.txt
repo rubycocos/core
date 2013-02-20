@@ -1,6 +1,5 @@
 History.md
 Manifest.txt
-NOTES.md
 README.md
 Rakefile
 lib/logutils.rb

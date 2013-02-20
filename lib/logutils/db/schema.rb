@@ -13,7 +13,7 @@ create_table :logs do |t|
   t.string  :app
   t.string  :tag       # e.g. class name w/ namespace e.g. SportDB.Reader etc. # NB: change to name?
   t.integer :pid
-  t.string  :tid     # NB: thread_id  - change to integer ??
+  t.integer :tid
   t.string  :ts      # timestamp - change to datetime?
   # add filename, line, method ??
   t.timestamps
