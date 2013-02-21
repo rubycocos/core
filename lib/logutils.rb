@@ -5,6 +5,7 @@
 #
 # 1.9.x: ruby -Ilib lib/logutils.rb
 
+
 # core and stlibs
 
 require 'yaml'
@@ -13,32 +14,16 @@ require 'logger'
 require 'fileutils'
 
 
-# rubygems / 3rd party libs
-
-require 'active_record'   ## todo: add sqlite3? etc.
-
-
 # our own code
 
 require 'logutils/version'
-
-require 'logutils/db/models'
-require 'logutils/db/schema'
-require 'logutils/db/deleter'
 
 require 'logutils/logger'
 
 
 module LogUtils
 
-end  # module LogUtils
-
-
-module LogDB
-
-  def self.banner
-    "logdb #{LogUtils::VERSION} on Ruby #{RUBY_VERSION} (#{RUBY_RELEASE_DATE}) [#{RUBY_PLATFORM}]"
-  end
+=begin   # not needed for now; keep it for later
 
   def self.root
     "#{File.expand_path( File.dirname(File.dirname(__FILE__)) )}"
@@ -48,23 +33,16 @@ module LogDB
     "#{root}/config"
   end
 
-  def self.create
-    CreateDB.up
+=end
+
+  ###########
+  # use it like:
+  #  logger = LogUtils[ self ]  or
+  #  logger = LogUtils[ 'SportDb::Reader' ] etc.
+
+  def self.[]( class_or_name )
+    # for now always return single instance, that is, use standard/default logger for all
+    STDLOGGER
   end
 
-  # delete ALL records (use with care!)
-  def self.delete!
-    puts '*** deleting log table records/data...'
-    Deleter.new.run
-  end # method delete!
-
-
-  def self.stats
-    # to be done
-  end
-
-
-end # module LogDB
-
-## say hello
-puts LogDB.banner
+end  # module LogUtils

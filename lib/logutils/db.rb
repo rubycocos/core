@@ -1,0 +1,74 @@
+
+#########################################
+# NB: only load on demand
+#  we do NOT want to pull in activerecord gem/dep for simple scripts
+
+# rubygems / 3rd party libs
+
+require 'active_record'   ## todo: add sqlite3? etc.
+
+# our own code
+
+require 'logutils/db/models'
+require 'logutils/db/schema'
+require 'logutils/db/deleter'
+
+
+module LogDb
+
+  VERSION = LogUtils::VERSION
+
+  def self.banner
+    "logdb #{VERSION} on Ruby #{RUBY_VERSION} (#{RUBY_RELEASE_DATE}) [#{RUBY_PLATFORM}]"
+  end
+
+end
+
+###########################################3
+## fix: remove old alias for LogDb
+
+LogDB = LogDb
+
+###########################
+
+module LogDb
+
+  class DbListener
+    include LogDB::Models
+    
+    def write( ev )
+      if( ev.fatal? || ev.error? || ev.warn? )
+        ## create log entry in db table (logs)
+        Log.create!( level: ev.level, msg: ev.msg, pid: ev.pid, tid: ev.tid, ts: ev.ts )
+      end
+    end # method write
+  end  # class DbListener
+
+  STDDBLISTENER = DbListener.new   # default/standard db listener
+
+  def self.create
+    CreateDb.up
+  end
+
+  # delete ALL records (use with care!)
+  def self.delete!
+    puts '*** deleting log table records/data...'
+    Deleter.new.run
+  end # method delete!
+
+
+  def self.stats
+    # to be done
+  end
+
+  def self.setup   # check: use different name?  e.g. configure or connect ?? why or why not?
+    # turn on logging to db  - assumes active connection
+    LogUtils::STDLOGGER.listeners << STDDBLISTENER
+  end
+ 
+
+end # module LogDb
+
+
+# say hello
+puts LogDb.banner

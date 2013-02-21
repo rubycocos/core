@@ -20,6 +20,35 @@ use methods e.g.
     logger.error "another msg"
     logger.fatal "another msg"
 
+To get a Logger use
+
+    logger = LogUtils[ self ]
+
+or
+
+    logger = LogUtils[ 'SportDb::Reader' ]
+
+### Log to the database using `LogDb`
+
+NB: To use the `LogDb` machinery require the module, that is, issue:
+
+    require 'logutils/db'
+
+To create the database tables use:
+
+    LogDb.create
+
+To start logging to database (established connection required) use:
+
+    LogDb.setup
+
+To clean out all log records from the database use:
+
+    LogDb.delete!
+
+That's it.
+
+
 
 ## Alternatives
 

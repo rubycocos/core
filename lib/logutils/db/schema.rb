@@ -1,7 +1,7 @@
 
-module LogDB
+module LogDb
 
-class CreateDB   ## fix/todo: change to ActiveRecord::Migration why? why not?
+class CreateDb   ## fix/todo: change to ActiveRecord::Migration why? why not?
 
 def self.up
 
@@ -39,6 +39,6 @@ end
 
 end # method up
 
-end # class CreateDB
+end # class CreateDb
 
-end # module LogDB
+end # module LogDb

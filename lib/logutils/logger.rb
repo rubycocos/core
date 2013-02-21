@@ -8,8 +8,11 @@ module LogUtils
     ERROR = 'error'
     FATAL = 'fatal'
   end
-  
+
+
   class Event
+    include Level
+
     def initialize( level, msg )
       @level = level
       @msg   = msg
@@ -27,16 +30,49 @@ module LogUtils
     attr_reader :ts    # timestamp
 
 
-    def to_s()
-      "[#{level}-#{pid}.#{tid}] #{msg}"
+    def fatal?
+      @level == FATAL
+    end
+
+    def error?
+      @level == ERROR
+    end
+
+    def warn?
+      @level == WARN
+    end
+
+
+    def to_s
+      # "[#{level}-#{pid}.#{tid}] #{msg}"
+      "[#{level}] #{msg}"
     end
 
   end # class Event
+
+
+  class ConsoleListener
+    def write( ev )
+      if( ev.fatal? || ev.error? || ev.warn? )
+        STDERR.puts ev.to_s
+      else
+        STDOUT.puts ev.to_s
+      end
+    end
+  end  # class ConsoleListener
   
-  
+  STDLISTENER = ConsoleListener.new  # default/standard console listener
+
+
   class Logger
-    include LogDB::Models
     include Level
+    
+    def initialize
+      @listeners = []
+      @listeners << STDLISTENER  # by default log to console
+    end
+    
+    attr_reader :listeners
     
     def debug( msg )
       write( Event.new( DEBUG, msg ) )
@@ -61,14 +97,11 @@ module LogUtils
   private
 
     def write( ev )
-      puts ev.to_s
-      
-      if( [FATAL, ERROR, WARN].include?( ev.level ) )
-        ## create log entry in db table (logs)
-        Log.create!( level: ev.level, msg: ev.msg, pid: ev.pid, tid: ev.tid, ts: ev.ts )
-      end
+      @listeners.each { |l| l.write( ev ) }
     end
     
   end # class Logger
   
+  STDLOGGER = Logger.new    # single instance - default/standard logger
+
 end # module LogUtils

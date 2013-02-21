@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-module LogDB
+module LogDb
   module Models
 
 
@@ -10,4 +10,4 @@ end # class Log
 
 
   end # module Models
-end # module LogDB
+end # module LogDb
