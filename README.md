@@ -38,7 +38,7 @@ To create the database tables use:
 
     LogDb.create
 
-To start logging to database (established connection required) use:
+To start logging to the database (established connection required) use:
 
     LogDb.setup
 
@@ -46,8 +46,37 @@ To clean out all log records from the database use:
 
     LogDb.delete!
 
-That's it.
 
+### All together now
+
+
+    require 'logutils'
+    
+    logger = LogUtils[ 'Test' ]
+    logger.info 'hello LogUtils'
+    
+    require 'logutils/db'
+    
+    LOG_DB_PATH = './log.db'
+    
+    LOG_DB_CONFIG = {
+      :adapter   =>  'sqlite3',
+      :database  =>  LOG_DB_PATH
+    }
+    
+    require 'active_record'
+    
+    pp LOG_DB_CONFIG
+    ActiveRecord::Base.establish_connection( LOG_DB_CONFIG )
+    
+    LogDb.create
+    LogDb.setup
+    
+    logger.info 'hola LogUtils'
+    logger.warn 'servus LogUtils'
+
+
+That's it.
 
 
 ## Alternatives
