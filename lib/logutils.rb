@@ -20,8 +20,7 @@ require 'logutils/version'
 require 'logutils/logger'
 
 
-module LogUtils
-
+module LogUtils::Kernel
 =begin   # not needed for now; keep it for later
 
   def self.root
@@ -33,12 +32,13 @@ module LogUtils
   end
 
 =end
+end
+
+
+module LogUtils
 
   ###########
   # deprecated - remove old api!!!
-  #  use it like:
-  #  logger = LogUtils[ self ]  or
-  #  logger = LogUtils[ 'SportDb::Reader' ] etc.
 
   def self.[]( class_or_name )
     
@@ -51,8 +51,15 @@ module LogUtils
   ###################################
   # export public api from kernel
 
+
+  ##############################
+  #  use it like:
+  #  logger = Logger[ self ]  or
+  #  logger = Logger[ SportDb::Reader ] or
+  #  logger = Logger[ 'SportDb::Reader' ] etc.
+
   Logger = LogUtils::Kernel::Logger
-  include LogUtils::Kernel::Level
+  include LogUtils::Kernel::Level    # e.g. export ALL,DEBUG,INFO,WARN,etc.
 
 
 
@@ -82,7 +89,7 @@ module LogUtils
   #  end
 
   module Logging
-    include LogUtils::Kernel::Level
+    include LogUtils::Kernel::Level # e.g. lets you use ALL,DEBUG,INFO,WARN,etc.
 
     def logger
       @logger ||= LogUtils::Kernel::Logger[ self ]

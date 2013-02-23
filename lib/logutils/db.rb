@@ -16,7 +16,7 @@ require 'logutils/db/deleter'
 
 module LogDb
 
-  VERSION = LogUtils::VERSION
+  include LogUtils::Kernel   # NB: will also include VERSION constant e.g. LogDB::VERSION == LogUtils::Kernel::VERSION
 
   def self.banner
     "logdb #{VERSION} on Ruby #{RUBY_VERSION} (#{RUBY_RELEASE_DATE}) [#{RUBY_PLATFORM}]"
@@ -33,10 +33,8 @@ LogDB = LogDb
 
 module LogDb
 
-  include LogUtils::Kernel
-
   class DbListener
-    include LogDB::Models
+    include LogDb::Models
     
     def write( ev )
       if( ev.fatal? || ev.error? || ev.warn? )
