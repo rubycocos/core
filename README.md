@@ -1,5 +1,7 @@
 # logutils
 
+[![Build Status](https://secure.travis-ci.org/geraldb/logutils.png?branch=master)](http://travis-ci.org/geraldb/logutils)
+
 Another Logger in Ruby
 
 * [github.com/geraldb/logutils](https://github.com/geraldb/logutils)
@@ -11,7 +13,7 @@ Logging levels:
 [ALL] < DEBUG < INFO < WARN < ERROR < FATAL < [OFF]
 
 
-Start off getting a logger e.g.:
+Start by getting a logger e.g.:
 
     logger = LogUtils::Logger.new
 
@@ -90,7 +92,6 @@ To clean out all log records from the database use:
 
 ### All together now
 
-
     require 'logutils'
     
     include LogUtils    # lets you use Logger instead of LogUtils::Logger
@@ -98,16 +99,14 @@ To clean out all log records from the database use:
     logger = Logger[ 'Test' ]
     logger.info 'hello LogUtils'
     
-    require 'logutils/db'
     
-    LOG_DB_PATH = './log.db'
+    require 'logutils/db'
+    require 'active_record'
     
     LOG_DB_CONFIG = {
       :adapter   =>  'sqlite3',
-      :database  =>  LOG_DB_PATH
+      :database  =>  './log.db'
     }
-    
-    require 'active_record'
     
     pp LOG_DB_CONFIG
     ActiveRecord::Base.establish_connection( LOG_DB_CONFIG )
@@ -121,19 +120,30 @@ To clean out all log records from the database use:
 
 That's it.
 
+
+## Real World Usage
+
+[world.db.ruby](https://github.com/geraldb/world.db.ruby) - `world.db` Command Line Tool
+
+[sport.db.ruby](https://github.com/geraldb/sport.db.ruby) - `sport.db` Command Line Tool
+
+[Sportbook](http://geraldb.github.com/sportbook) - A free, open source sports betting pool
+in Ruby on Rails (version 3.2 and up). 
+
+
 ## Todos
 
 - [ ] Add UNKNOWN level - why? why not? check std logger
 
 
-
 ## Alternatives
 
+* [log4r](https://github.com/colbygk/log4r)  - Logging Library modeled after log4j in the Java world
+* [slf4r](https://github.com/mkristian/slf4r) - Logging Library modeled after slf4j in the Java world
+* [yell](https://github.com/rudionrails/yell)
+* [logging](https://github.com/TwP/logging)
 * [Ruby Toolbox Logging Category](https://www.ruby-toolbox.com/categories/Logging)
-* [log4r]()
-* [slf4r](https://www.ruby-toolbox.com/projects/slf4r)
-* [yell]()
-* [logging](https://rubygems.org/gems/logging)
+
 
 ## License
 
