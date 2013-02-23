@@ -1,21 +1,47 @@
 
-module LogUtils
+module LogUtils::Kernel
   
+  ## private "kernel" - with include LogUtils - do NOT include everything
+  
+  
+  #####
+  # use like:
+  #  LEVEL_NAME[ DEBUG ]  will return  'debug'
+  #  LEVEL_NAME[ ERROR ]  will return  'error' etc.
+  
+  ### todo: reverse level integers ??? why? why not??
+  # more logical  no output     = 0 (off)
+  #               everything    = 6 (all)
+  #               debug         = 5 etc.
+
   module Level
-    DEBUG = 'debug'
-    INFO  = 'info'
-    WARN  = 'warn'
-    ERROR = 'error'
-    FATAL = 'fatal'
+    ALL   = 0
+    DEBUG = 1
+    INFO  = 2
+    WARN  = 3
+    ERROR = 4
+    FATAL = 5
+    OFF   = 6
   end
 
 
   class Event
-    include Level
+    include Level   # lets you access Level::DEBUG with just DEBUG etc.
 
-    def initialize( level, msg )
-      @level = level
-      @msg   = msg
+    LEVEL_NAME =
+    [
+     'all',    # 0
+     'debug',  # 1
+     'info',   # 2
+     'warn',   # 3
+     'error',  # 4
+     'fatal',  # 5
+     'off'     # 6
+    ]
+
+    def initialize( levelno, msg )
+      @levelno = levelno    # pass in integer e.g. 0,1,2,3,etc.
+      @msg     = msg
       
       @pid   = Process.pid
       @tid   = Thread.current.object_id
@@ -23,7 +49,10 @@ module LogUtils
       @ts    = Time.now
     end
 
-    attr_reader :level
+    def level
+      LEVEL_NAME[ @levelno ]
+    end
+
     attr_reader :msg
     attr_reader :pid   # process_id
     attr_reader :tid   # thread_id
@@ -31,15 +60,15 @@ module LogUtils
 
 
     def fatal?
-      @level == FATAL
+      @levelno == FATAL
     end
 
     def error?
-      @level == ERROR
+      @levelno == ERROR
     end
 
     def warn?
-      @level == WARN
+      @levelno == WARN
     end
 
 
@@ -66,7 +95,11 @@ module LogUtils
 
   class Logger
     include Level
-    
+
+    def self.[]( class_or_name )
+      STDLOGGER
+    end
+
     def initialize
       @listeners = []
       @listeners << STDLISTENER  # by default log to console

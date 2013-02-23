@@ -8,25 +8,56 @@ Another Logger in Ruby
 
 Logging levels:
 
-DEBUG < INFO < WARN < ERROR < FATAL
+[ALL] < DEBUG < INFO < WARN < ERROR < FATAL < [OFF]
+
 
 use methods e.g.
 
-    logger = LoggerUtils::Logger.new
-    
+    logger = LogUtils::Logger.new
+
+or
+
+    include LogUtils
+   
+    logger = Logger.new
+
+now you're ready to log
+
     logger.debug "msg"
     logger.info "another msg"
     logger.warn "another msg"
     logger.error "another msg"
     logger.fatal "another msg"
 
+
 To get a Logger use
 
-    logger = LogUtils[ self ]
+    logger = Logger[ self ]  # pass in object reference
 
 or
 
-    logger = LogUtils[ 'SportDb::Reader' ]
+    logger = Logger[ SportDb::Reader ]    # pass in class reference
+
+or
+
+    logger = Logger[ 'SportDb::Reader' ]  # pass in class name (as string)
+
+
+### `Logging` Mixin
+
+Note: In a class for convenience you can include the logging machinery
+with a single line using the Logging mixin e.g.
+
+    include LogUtils::Logging
+
+This will add/mixin the logger attribute reader
+
+    def logger
+      @logger ||= Logger[ self ]
+    end
+
+plus the constants for all logging levels, that is, FATAL, ERROR, WARN, etc.
+
 
 ### Log to the database using `LogDb`
 
@@ -52,7 +83,9 @@ To clean out all log records from the database use:
 
     require 'logutils'
     
-    logger = LogUtils[ 'Test' ]
+    include LogUtils    # lets you use Logger instead of LogUtils::Logger
+    
+    logger = Logger[ 'Test' ]
     logger.info 'hello LogUtils'
     
     require 'logutils/db'
@@ -77,6 +110,11 @@ To clean out all log records from the database use:
 
 
 That's it.
+
+## Todos
+
+- [ ] Add UNKNOWN level - why? why not? check std logger
+
 
 
 ## Alternatives

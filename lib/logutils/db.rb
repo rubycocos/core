@@ -33,6 +33,8 @@ LogDB = LogDb
 
 module LogDb
 
+  include LogUtils::Kernel
+
   class DbListener
     include LogDB::Models
     
@@ -63,7 +65,7 @@ module LogDb
 
   def self.setup   # check: use different name?  e.g. configure or connect ?? why or why not?
     # turn on logging to db  - assumes active connection
-    LogUtils::STDLOGGER.listeners << STDDBLISTENER
+    STDLOGGER.listeners << STDDBLISTENER
   end
  
 

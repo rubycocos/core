@@ -1,13 +1,34 @@
 
-puts "before require 'logutils'"
+
 require 'logutils'
 
 puts "LogUtils::VERSION #{LogUtils::VERSION}"
 
-logger = LogUtils[ 'Test' ]
+logger = LogUtils[ 'Test' ]   ## old api remove
 logger.info 'hello LogUtils'
 
-puts "before require 'logutils/db'"
+logger2 = LogUtils::Logger[ 'Test' ]
+logger2.info 'hello LogUtils 2'
+
+include LogUtils
+
+logger3 = Logger[ 'Test' ]
+logger3.info 'hello LogUtils 3'
+
+class SampleClass
+  include Logging
+
+  def initialize
+    logger.info 'hello SampleClass'
+  end
+end
+
+SampleClass.new
+
+
+#####################################
+# check db logging machinery
+
 require 'logutils/db'
 
 
