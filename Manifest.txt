@@ -9,4 +9,5 @@ lib/logutils/db/models.rb
 lib/logutils/db/schema.rb
 lib/logutils/logger.rb
 lib/logutils/version.rb
-test/test.rb
+test/test_helper.rb
+test/test_logger.rb
