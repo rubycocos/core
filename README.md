@@ -11,7 +11,7 @@ Logging levels:
 [ALL] < DEBUG < INFO < WARN < ERROR < FATAL < [OFF]
 
 
-use methods e.g.
+Start off getting a logger e.g.:
 
     logger = LogUtils::Logger.new
 
@@ -21,7 +21,7 @@ or
    
     logger = Logger.new
 
-now you're ready to log
+now you're ready to log using the methods `#debug`, `#info`, `#warn`, etc.
 
     logger.debug "msg"
     logger.info "another msg"
@@ -50,13 +50,23 @@ with a single line using the Logging mixin e.g.
 
     include LogUtils::Logging
 
-This will add/mixin the logger attribute reader
+This will add/mixin the logger attribute reader e.g.
 
     def logger
       @logger ||= Logger[ self ]
     end
 
 plus the constants for all logging levels, that is, FATAL, ERROR, WARN, etc.
+
+Example:
+
+    class SampleClass
+      include Logging
+    
+      def initialize
+        logger.info 'hello SampleClass'
+      end
+    end
 
 
 ### Log to the database using `LogDb`

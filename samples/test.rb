@@ -31,12 +31,9 @@ SampleClass.new
 
 require 'logutils/db'
 
-
-LOG_DB_PATH = './log.db'
-
 LOG_DB_CONFIG = {
   :adapter   =>  'sqlite3',
-  :database  =>  LOG_DB_PATH
+  :database  =>  './log.db'
 }
 
 require 'active_record'
