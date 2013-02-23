@@ -100,8 +100,7 @@ To clean out all log records from the database use:
     logger.info 'hello LogUtils'
     
     
-    require 'logutils/db'
-    require 'active_record'
+    require 'logutils/db'   # nb: will also require 'active_record'
     
     LOG_DB_CONFIG = {
       :adapter   =>  'sqlite3',

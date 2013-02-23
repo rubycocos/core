@@ -20,7 +20,7 @@ require 'logutils/version'
 require 'logutils/logger'
 
 
-module LogUtils::Kernel
+module LogKernel
 =begin   # not needed for now; keep it for later
 
   def self.root
@@ -45,7 +45,7 @@ module LogUtils
     puts "depreceated API call LogUtils[] - use Logger[] / LogUtils::Logger[] instead"
     
     # for now always return single instance, that is, use standard/default logger for all
-    LogUtils::Kernel::STDLOGGER
+    LogKernel::STDLOGGER
   end
 
   ###################################
@@ -58,8 +58,8 @@ module LogUtils
   #  logger = Logger[ SportDb::Reader ] or
   #  logger = Logger[ 'SportDb::Reader' ] etc.
 
-  Logger = LogUtils::Kernel::Logger
-  include LogUtils::Kernel::Level    # e.g. export ALL,DEBUG,INFO,WARN,etc.
+  Logger = LogKernel::Logger
+  include LogKernel::Level    # e.g. export ALL,DEBUG,INFO,WARN,etc.
 
 
 
@@ -89,10 +89,10 @@ module LogUtils
   #  end
 
   module Logging
-    include LogUtils::Kernel::Level # e.g. lets you use ALL,DEBUG,INFO,WARN,etc.
+    include LogKernel::Level # e.g. lets you use ALL,DEBUG,INFO,WARN,etc.
 
     def logger
-      @logger ||= LogUtils::Kernel::Logger[ self ]
+      @logger ||= LogKernel::Logger[ self ]
     end
   end
 

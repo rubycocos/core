@@ -16,7 +16,7 @@ require 'logutils/db/deleter'
 
 module LogDb
 
-  include LogUtils::Kernel   # NB: will also include VERSION constant e.g. LogDB::VERSION == LogUtils::Kernel::VERSION
+  include LogKernel   # NB: will also include VERSION constant e.g. LogDB::VERSION == LogUtils::Kernel::VERSION
 
   def self.banner
     "logdb #{VERSION} on Ruby #{RUBY_VERSION} (#{RUBY_RELEASE_DATE}) [#{RUBY_PLATFORM}]"
@@ -29,11 +29,13 @@ end
 
 LogDB = LogDb
 
+
+
 ###########################
 
 module LogDb
 
-  class DbListener
+  class DbHandler
     include LogDb::Models
     
     def write( ev )
@@ -42,9 +44,7 @@ module LogDb
         Log.create!( level: ev.level, msg: ev.msg, pid: ev.pid, tid: ev.tid, ts: ev.ts )
       end
     end # method write
-  end  # class DbListener
-
-  STDDBLISTENER = DbListener.new   # default/standard db listener
+  end  # class DbHandler
 
   def self.create
     CreateDb.up
@@ -61,11 +61,14 @@ module LogDb
     # to be done
   end
 
+
+  STDDBHANDLER = DbHandler.new   # default/standard db handler
+
   def self.setup   # check: use different name?  e.g. configure or connect ?? why or why not?
     # turn on logging to db  - assumes active connection
-    STDLOGGER.listeners << STDDBLISTENER
+    STDLOGGER.handlers << STDDBHANDLER
   end
- 
+
 
 end # module LogDb
 

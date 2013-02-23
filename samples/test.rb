@@ -2,7 +2,7 @@
 
 require 'logutils'
 
-puts "LogUtils::Kernel::VERSION #{LogUtils::Kernel::VERSION}"
+puts "LogKernel::VERSION #{LogKernel::VERSION}"
 
 logger = LogUtils[ 'Test' ]   ## old api remove
 logger.info 'hello LogUtils'
@@ -29,23 +29,20 @@ SampleClass.new
 #####################################
 # check db logging machinery
 
-require 'logutils/db'
+require 'logutils/db'   # nb: will also require 'active_record'
+
 
 LOG_DB_CONFIG = {
   :adapter   =>  'sqlite3',
   :database  =>  './log.db'
 }
 
-require 'active_record'
-
 pp LOG_DB_CONFIG
 ActiveRecord::Base.establish_connection( LOG_DB_CONFIG )
 
 
 LogDb.create
-
 LogDb.setup
 
 logger.info 'hola LogUtils'
 logger.warn 'servus LogUtils'
-

@@ -1,5 +1,5 @@
 
-module LogUtils::Kernel
+module LogKernel
   
   ## private "kernel" - with include LogUtils - do NOT include everything
   
@@ -80,7 +80,7 @@ module LogUtils::Kernel
   end # class Event
 
 
-  class ConsoleListener
+  class ConsoleHandler
     def write( ev )
       if( ev.fatal? || ev.error? || ev.warn? )
         STDERR.puts ev.to_s
@@ -88,9 +88,9 @@ module LogUtils::Kernel
         STDOUT.puts ev.to_s
       end
     end
-  end  # class ConsoleListener
+  end  # class ConsoleHandler
   
-  STDLISTENER = ConsoleListener.new  # default/standard console listener
+  STDHANDLER = ConsoleHandler.new  # default/standard log handler
 
 
   class Logger
@@ -101,11 +101,11 @@ module LogUtils::Kernel
     end
 
     def initialize
-      @listeners = []
-      @listeners << STDLISTENER  # by default log to console
+      @handlers = []
+      @handlers << STDHANDLER   # by default log to console
     end
     
-    attr_reader :listeners
+    attr_reader :handlers
     
     def debug( msg )
       write( Event.new( DEBUG, msg ) )
@@ -130,11 +130,11 @@ module LogUtils::Kernel
   private
 
     def write( ev )
-      @listeners.each { |l| l.write( ev ) }
+      @handlers.each { |l| l.write( ev ) }
     end
     
   end # class Logger
   
   STDLOGGER = Logger.new    # single instance - default/standard logger
 
-end # module LogUtils
+end # module LogKernel

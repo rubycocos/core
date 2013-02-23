@@ -4,7 +4,7 @@ require './lib/logutils/version.rb'
 
 Hoe.spec 'logutils' do
   
-  self.version = LogUtils::Kernel::VERSION
+  self.version = LogKernel::VERSION
   
   self.summary = 'Another Logger'
   self.description = summary

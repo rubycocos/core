@@ -20,9 +20,9 @@ class TestLogger < MiniTest::Unit::TestCase
     
     ### nb: for now all return LogUtils::Kernel::STDLOGGER
     
-    assert(l1 == LogUtils::Kernel::STDLOGGER )
-    assert(l2 == LogUtils::Kernel::STDLOGGER )
-    assert(l3 == LogUtils::Kernel::STDLOGGER )
+    assert(l1 == LogKernel::STDLOGGER )
+    assert(l2 == LogKernel::STDLOGGER )
+    assert(l3 == LogKernel::STDLOGGER )
   end
   
   class SampleClass
@@ -38,8 +38,8 @@ class TestLogger < MiniTest::Unit::TestCase
      obj  = SampleClass.new
      obj2 = Sample2Class.new
      
-     assert( obj.logger == LogUtils::Kernel::STDLOGGER )
-     assert( obj2.logger == LogUtils::Kernel::STDLOGGER )
+     assert( obj.logger == LogKernel::STDLOGGER )
+     assert( obj2.logger == LogKernel::STDLOGGER )
   end
   
 end
