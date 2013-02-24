@@ -39,7 +39,7 @@ module LogDb
     include LogDb::Models
     
     def write( ev )
-      if( ev.fatal? || ev.error? || ev.warn? )
+      if( ev.fatal? || ev.error? || ev.warn? || ev.unknown? )
         ## create log entry in db table (logs)
         Log.create!( level: ev.level, msg: ev.msg, pid: ev.pid, tid: ev.tid, ts: ev.ts )
       end

@@ -59,8 +59,6 @@ module LogUtils
   #  logger = Logger[ 'SportDb::Reader' ] etc.
 
   Logger = LogKernel::Logger
-  include LogKernel::Level    # e.g. export ALL,DEBUG,INFO,WARN,etc.
-
 
 
   #####
@@ -89,12 +87,9 @@ module LogUtils
   #  end
 
   module Logging
-    include LogKernel::Level # e.g. lets you use ALL,DEBUG,INFO,WARN,etc.
-
     def logger
       @logger ||= LogKernel::Logger[ self ]
     end
   end
 
 end  # module LogUtils
-

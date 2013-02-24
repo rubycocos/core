@@ -1,4 +1,6 @@
-
+#######
+# use to run:
+#   ruby -I ./lib samples/test.rb
 
 require 'logutils'
 

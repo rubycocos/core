@@ -4,7 +4,7 @@
 #  or better
 #     rake test
 
-require 'test_helper'
+require 'helper'
 
 class TestLogger < MiniTest::Unit::TestCase
   include LogUtils        # lets us use Logger instead of LogUtils::Logger
