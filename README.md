@@ -1,10 +1,12 @@
-# logutils
+# logutils - Another Logger in Ruby
 
 [![Build Status](https://secure.travis-ci.org/geraldb/logutils.png?branch=master)](http://travis-ci.org/geraldb/logutils)
 
-Another Logger in Ruby
+* home :: [github.com/geraldb/logutils](https://github.com/geraldb/logutils)
+* bugs :: [github.com/geraldb/logutils/issues](https://github.com/geraldb/logutils)
+* gem  :: [rubygems.org/gems/logutils](https://rubygems.org/gems/logutils)
+* rdoc :: [rubydoc.info/gems/logutils](http://rubydoc.info/gems/logutils)
 
-* [github.com/geraldb/logutils](https://github.com/geraldb/logutils)
 
 ## Usage
 
@@ -132,7 +134,7 @@ in Ruby on Rails (version 3.2 and up).
 
 ## Todos
 
-- [ ] Add UNKNOWN level - why? why not? check std logger
+- [ ] Add TRACE level - why? why not? check std logger
 
 
 ## Alternatives
