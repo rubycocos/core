@@ -6,9 +6,6 @@ require 'logutils'
 
 puts "LogKernel::VERSION #{LogKernel::VERSION}"
 
-logger = LogUtils[ 'Test' ]   ## old api remove
-logger.info 'hello LogUtils'
-
 logger2 = LogUtils::Logger[ 'Test' ]
 logger2.info 'hello LogUtils 2'
 

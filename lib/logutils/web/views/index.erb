@@ -1,0 +1,47 @@
+
+<h3><%= Log.count %> Logs</h3>
+
+<!-- todo:
+    add filter for FATAL,ERROR,WARN,etc.
+    add log count per kind? (e.g. 20 errors, 5 warns, etc.)
+ 
+    css: use colors
+    
+    - error/fatal - red?
+    - warn - // bold or organge?
+    - info - normal
+    - debug - light grey??
+  -->
+
+<style>
+
+    body {  font-family: arial,verdana,helvetica; }
+
+    .log-id,
+    .log-pid,
+    .log-created-at   { font-size: 60%; color: grey; }
+    
+    .log-level,
+    .log-msg  { font-size: 80%; }
+    
+    .log-created-at,
+    .log-msg {   white-space: nowrap; }    
+    
+    .log-level { font-weight: bold; }
+
+    .log-msg.warn { font-weight: bold; }    
+    
+</style>
+
+
+<table>
+ <% Log.all.each do |log| %>
+  <tr>
+    <td class='log-id'>(<%= log.id %>)</td>
+    <td class='log-level <%= log.level %>'>[<%= log.level %>]</td>
+    <td class='log-msg   <%= log.level %>'><%= log.msg %></td>
+    <td class='log-pid'><%= "#{log.pid}.#{log.tid}" %></td>
+    <td class='log-created-at' <%= log.level %>'><%= log.created_at %></td>
+  </tr>
+ <% end %>
+</table>

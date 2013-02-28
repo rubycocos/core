@@ -21,32 +21,21 @@ require 'logutils/logger'
 
 
 module LogKernel
-=begin   # not needed for now; keep it for later
 
   def self.root
     "#{File.expand_path( File.dirname(File.dirname(__FILE__)) )}"
   end
 
+=begin   # not needed for now; keep it for later
   def self.config_path
     "#{root}/config"
   end
-
 =end
+
 end
 
 
 module LogUtils
-
-  ###########
-  # deprecated - remove old api!!!
-
-  def self.[]( class_or_name )
-    
-    puts "depreceated API call LogUtils[] - use Logger[] / LogUtils::Logger[] instead"
-    
-    # for now always return single instance, that is, use standard/default logger for all
-    LogKernel::STDLOGGER
-  end
 
   ###################################
   # export public api from kernel
@@ -59,7 +48,6 @@ module LogUtils
   #  logger = Logger[ 'SportDb::Reader' ] etc.
 
   Logger = LogKernel::Logger
-
 
   #####
   # use it like
