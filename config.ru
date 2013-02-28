@@ -1,2 +1,2 @@
 require './boot'
-run LogDb::Web::App
+run LogDb::Server

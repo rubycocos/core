@@ -1,8 +1,6 @@
 
 # ruby stdlibs
-require 'json'
-require 'uri'
-require 'logger'
+
 require 'pp'
 
 # 3rd party libs/gems
@@ -15,8 +13,8 @@ ENV['RACK_ENV'] ||= 'development'
 puts "ENV['RACK_ENV'] = #{ENV['RACK_ENV']}"
 
 DB_CONFIG = {
-    adapter:  'sqlite3',
-    database: 'log.db'
+  adapter:  'sqlite3',
+  database: 'log.db'
 }
 
 puts "DB_CONFIG:"
@@ -31,4 +29,4 @@ ActiveRecord::Base.establish_connection( DB_CONFIG )
 
 $LOAD_PATH << "./lib"
 
-require './lib/logutils/web.rb'
+require './lib/logutils/server.rb'
