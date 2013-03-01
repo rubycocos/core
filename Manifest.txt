@@ -8,6 +8,11 @@ lib/logutils/db/deleter.rb
 lib/logutils/db/models.rb
 lib/logutils/db/schema.rb
 lib/logutils/logger.rb
+lib/logutils/server.rb
+lib/logutils/server/public/style.css
+lib/logutils/server/views/_version.erb
+lib/logutils/server/views/index.erb
+lib/logutils/server/views/layout.erb
 lib/logutils/version.rb
 test/helper.rb
 test/test_logger.rb
