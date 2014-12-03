@@ -2,8 +2,8 @@
 
 [![Build Status](https://secure.travis-ci.org/geraldb/logutils.png?branch=master)](http://travis-ci.org/geraldb/logutils)
 
-* home :: [github.com/geraldb/logutils](https://github.com/geraldb/logutils)
-* bugs :: [github.com/geraldb/logutils/issues](https://github.com/geraldb/logutils)
+* home :: [github.com/rubylibs/logutils](https://github.com/rubylibs/logutils)
+* bugs :: [github.com/rubylibs/logutils/issues](https://github.com/rubylibs/logutils)
 * gem  :: [rubygems.org/gems/logutils](https://rubygems.org/gems/logutils)
 * rdoc :: [rubydoc.info/gems/logutils](http://rubydoc.info/gems/logutils)
 
@@ -73,62 +73,19 @@ Example:
     end
 
 
-### Log to the database using `LogDb`
+### Addons / Plugins / Extensions
 
-NB: To use the `LogDb` machinery require the module, that is, issue:
+[logutils-activerecord](https://github.com/rubylibs/logutils-activerecord) - add LogDb, Log Models, etc.
 
-    require 'logutils/db'
-
-To create the database tables use:
-
-    LogDb.create
-
-To start logging to the database (established connection required) use:
-
-    LogDb.setup
-
-To clean out all log records from the database use:
-
-    LogDb.delete!
-
-
-### All together now
-
-    require 'logutils'
-    
-    include LogUtils    # lets you use Logger instead of LogUtils::Logger
-    
-    logger = Logger[ 'Test' ]
-    logger.info 'hello LogUtils'
-    
-    
-    require 'logutils/db'   # nb: will also require 'active_record'
-    
-    LOG_DB_CONFIG = {
-      :adapter   =>  'sqlite3',
-      :database  =>  './log.db'
-    }
-    
-    pp LOG_DB_CONFIG
-    ActiveRecord::Base.establish_connection( LOG_DB_CONFIG )
-    
-    LogDb.create
-    LogDb.setup
-    
-    logger.info 'hola LogUtils'
-    logger.warn 'servus LogUtils'
-
-
-That's it.
 
 
 ## Real World Usage
 
-[world.db.ruby](https://github.com/geraldb/world.db.ruby) - `world.db` Command Line Tool
+[world.db.ruby](https://github.com/worlddb/world.db.ruby) - `world.db` Command Line Tool
 
-[sport.db.ruby](https://github.com/geraldb/sport.db.ruby) - `sport.db` Command Line Tool
+[sport.db.ruby](https://github.com/sportdb/sport.db.ruby) - `sport.db` Command Line Tool
 
-[Sportbook](http://geraldb.github.com/sportbook) - A free, open source sports betting pool
+[Sportbook](https://github.com/openbookie) - A free, open source sports betting pool
 in Ruby on Rails (version 3.2 and up). 
 
 
