@@ -15,16 +15,11 @@ require 'fileutils'
 
 # our own code
 
-require 'logutils/version'
-
+require 'logutils/version'    # NOTE: let version always go first
 require 'logutils/logger'
 
 
 module LogKernel
-
-  def self.root
-    "#{File.expand_path( File.dirname(File.dirname(__FILE__)) )}"
-  end
 
 =begin   # not needed for now; keep it for later
   def self.config_path
@@ -81,3 +76,7 @@ module LogUtils
   end
 
 end  # module LogUtils
+
+
+## say hello
+puts LogKernel.banner   if $DEBUG || (defined?($RUBYLIBS_DEBUG) && $RUBYLIBS_DEBUG)

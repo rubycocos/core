@@ -17,13 +17,3 @@ tmp
 _yardoc
 doc/
 
-
-#############
-# ignore komodo project files
-
-*.kpf
-
-###################
-# ignore dbs (e.g. log.db, sport.db, football.db, world.db etc.)
-
-*.db

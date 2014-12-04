@@ -1,6 +1,5 @@
 # logutils - Another Logger in Ruby
 
-[![Build Status](https://secure.travis-ci.org/geraldb/logutils.png?branch=master)](http://travis-ci.org/geraldb/logutils)
 
 * home :: [github.com/rubylibs/logutils](https://github.com/rubylibs/logutils)
 * bugs :: [github.com/rubylibs/logutils/issues](https://github.com/rubylibs/logutils)

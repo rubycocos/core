@@ -6,7 +6,7 @@
 
 require 'helper'
 
-class TestLogger < MiniTest::Unit::TestCase
+class TestLogger < MiniTest::Test
   include LogUtils        # lets us use Logger instead of LogUtils::Logger
 
   ####

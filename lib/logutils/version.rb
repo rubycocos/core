@@ -1,3 +1,4 @@
+# encoding: utf-8
 
 module LogUtils
   # NB: keep LogUtils namespace clean
@@ -5,6 +6,25 @@ module LogUtils
   # move all non public code/apis to LogKernel (including VERSION)
 end
 
+
 module LogKernel
-  VERSION = '0.6.0'
-end
+
+  MAJOR = 0    ## todo: namespace inside version or something - why? why not??
+  MINOR = 6
+  PATCH = 1
+  VERSION = [MAJOR,MINOR,PATCH].join('.')
+
+  def self.version
+    VERSION
+  end
+
+  def self.banner
+    "logutils/#{VERSION} on Ruby #{RUBY_VERSION} (#{RUBY_RELEASE_DATE}) [#{RUBY_PLATFORM}]"
+  end
+
+  def self.root
+    "#{File.expand_path( File.dirname(File.dirname(File.dirname(__FILE__))) )}"
+  end
+
+
+end  # module LogKernel
