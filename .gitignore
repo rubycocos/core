@@ -17,3 +17,10 @@ tmp
 _yardoc
 doc/
 
+
+###  add multi-gems
+/pkg/
+/logutils/pkg/
+/logutils-activerecord/pkg/
+/logutils-admin/pkg/
+
