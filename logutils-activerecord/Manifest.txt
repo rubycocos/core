@@ -1,0 +1,10 @@
+HISTORY.md
+Manifest.txt
+README.md
+Rakefile
+lib/logutils/activerecord.rb
+lib/logutils/activerecord/models.rb
+lib/logutils/activerecord/schema.rb
+lib/logutils/activerecord/version.rb
+test/helper.rb
+test/test_logger.rb
