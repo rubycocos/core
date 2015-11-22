@@ -1,0 +1,35 @@
+require 'hoe'
+require './lib/logutils/admin/version.rb'
+
+
+Hoe.spec 'logutils-admin' do
+  
+  self.version = LogDbAdmin::VERSION
+
+  self.summary = 'logutils-admin - Another Logger Addon for Browsing Logs in Database (LogDb, Log Model etc.)'
+  self.description = summary
+
+  self.urls    = ['https://github.com/rubylibs/logutils']
+
+  self.author  = 'Gerald Bauer'
+  self.email   = 'opensport@googlegroups.com'
+
+  # switch extension to .markdown for gihub formatting
+  #  -- Note: auto-changed when included in manifest
+  self.readme_file  = 'README.md'
+  self.history_file = 'HISTORY.md'
+  
+  self.licenses = ['Public Domain']
+
+  self.extra_deps = [
+    ['logutils', '>=0.6.1'],
+    ['logutils-activerecord', '>=0.1.2'],
+    ['activerecord'],  # Note: will include activesupport,etc.
+    ['sinatra']
+  ]  
+
+  self.spec_extras = {
+    required_ruby_version: '>= 1.9.2'
+  }
+
+end

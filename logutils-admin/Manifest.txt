@@ -1,0 +1,10 @@
+HISTORY.md
+Manifest.txt
+README.md
+Rakefile
+lib/logutils/admin.rb
+lib/logutils/admin/public/style.css
+lib/logutils/admin/version.rb
+lib/logutils/admin/views/_version.erb
+lib/logutils/admin/views/index.erb
+lib/logutils/admin/views/layout.erb
