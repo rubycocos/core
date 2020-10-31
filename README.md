@@ -18,6 +18,7 @@ Gems:
 <!-- break -->
 - [alphabets](alphabets) - alphabet (a-z) helpers incl. unaccent, downcase, variants, and more
 - [date-formats](date-formats) - read / parse and print dates (and times) from around the world
+- [date-formatter](date-formatter) - date formatter by example; auto-builds the strftime format string from an example date
 
 
 <!-- break -->
