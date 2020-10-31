@@ -13,6 +13,10 @@ Gems:
 
 
 <!-- break -->
+- [iniparser](iniparser) - read / parse INI configuration, settings and data files into a hash (incl. named subsections)
+
+
+<!-- break -->
 - [shell-lite](shell-lite) - run / execute shell commands
 
 

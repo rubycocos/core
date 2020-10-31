@@ -1,0 +1,10 @@
+CHANGELOG.md
+LICENSE.md
+Manifest.txt
+README.md
+Rakefile
+lib/iniparser.rb
+lib/iniparser/parser.rb
+lib/iniparser/version.rb
+test/helper.rb
+test/test_parser.rb
