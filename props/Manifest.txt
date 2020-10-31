@@ -1,0 +1,10 @@
+HISTORY.md
+Manifest.txt
+README.md
+Rakefile
+lib/props.rb
+lib/props/env.rb
+lib/props/props.rb
+lib/props/version.rb
+test/helper.rb
+test/test_version.rb

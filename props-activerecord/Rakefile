@@ -1,0 +1,31 @@
+require 'hoe'
+require './lib/props/activerecord/version.rb'
+
+Hoe.spec 'props-activerecord' do
+
+  self.version = ConfDb::VERSION
+
+  self.summary = 'props-activerecord - Manage Setting Hierachies Addon for Database Support (ConfDb, Props Model, etc.)'
+  self.description = summary
+
+  self.urls    = ['https://github.com/rubylibs/props']
+
+  self.author  = 'Gerald Bauer'
+  self.email   = 'ruby-talk@ruby-lang.org'
+
+  # switch extension to .markdown for gihub formatting
+  self.readme_file  = 'README.md'
+  self.history_file = 'HISTORY.md'
+
+  self.licenses = ['Public Domain']
+
+  self.extra_deps = [
+    ['props', '>=1.2.0'],
+    ['activerecord'],  # Note: will include activesupport, etc.
+  ]
+
+  self.spec_extras = {
+   required_ruby_version: '>= 2.3'
+  }
+
+end

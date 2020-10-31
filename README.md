@@ -8,6 +8,11 @@ Gems:
 
 
 <!-- break -->
+- [**props**](props)  - manage settings hierarchies (commandline, user, home, defaults, etc.)
+- [props-activerecord](props-activerecord) - addon for database support (ConfDb, props model, etc.)
+
+
+<!-- break -->
 - [shell-lite](shell-lite) - run / execute shell commands
 
 

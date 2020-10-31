@@ -1,0 +1,10 @@
+HISTORY.md
+Manifest.txt
+README.md
+Rakefile
+lib/props/activerecord.rb
+lib/props/activerecord/models.rb
+lib/props/activerecord/schema.rb
+lib/props/activerecord/version.rb
+test/helper.rb
+test/test_models.rb
