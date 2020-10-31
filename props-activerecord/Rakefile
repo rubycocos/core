@@ -8,7 +8,7 @@ Hoe.spec 'props-activerecord' do
   self.summary = 'props-activerecord - Manage Setting Hierachies Addon for Database Support (ConfDb, Props Model, etc.)'
   self.description = summary
 
-  self.urls    = ['https://github.com/rubylibs/props']
+  self.urls    = { home: 'https://github.com/rubycoco/core' }
 
   self.author  = 'Gerald Bauer'
   self.email   = 'ruby-talk@ruby-lang.org'

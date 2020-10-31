@@ -8,10 +8,10 @@ Hoe.spec 'date-formats' do
   self.summary = "date-formats - read / parse and print dates (and times) from around the world"
   self.description = summary
 
-  self.urls = { home: 'https://github.com/sportdb/sport.db' }
+  self.urls = { home: 'https://github.com/rubycoco/core' }
 
   self.author = 'Gerald Bauer'
-  self.email = 'opensport@googlegroups.com'
+  self.email  = 'ruby-talk@ruby-lang.org'
 
   # switch extension to .markdown for gihub formatting
   self.readme_file  = 'README.md'

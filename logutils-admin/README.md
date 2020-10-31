@@ -1,7 +1,7 @@
 # logutils-admin  - Another Logger - Addon for Browsing Logs in Database (LogDb, Log Model etc.)
 
-* home :: [github.com/rubylibs/logutils](https://github.com/rubylibs/logutils)
-* bugs :: [github.com/rubylibs/logutils/issues](https://github.com/rubylibs/logutils)
+* home :: [github.com/rubycoco/core](https://github.com/rubycoco/core)
+* bugs :: [github.com/rubycoco/core/issues](https://github.com/rubycoco/core/issues)
 * gem  :: [rubygems.org/gems/logutils-admin](https://rubygems.org/gems/logutils-admin)
 * rdoc :: [rubydoc.info/gems/logutils-admin](http://rubydoc.info/gems/logutils-admin)
 

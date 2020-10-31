@@ -8,10 +8,10 @@ Hoe.spec 'date-formatter' do
   self.summary = "date-formatter - date formatter by example; auto-builds the strftime format string from an example date"
   self.description = summary
 
-  self.urls    = ['https://github.com/feedreader/pluto']
+  self.urls    = { home: 'https://github.com/rubycoco/core' }
 
   self.author  = 'Gerald Bauer'
-  self.email   = 'wwwmake@googlegroups.com'
+  self.email   = 'ruby-talk@ruby-lang.org'
 
   # switch extension to .markdown for gihub formatting
   self.readme_file  = 'README.md'

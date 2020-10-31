@@ -1,11 +1,10 @@
 # iniparser - read / parse INI configuration, settings and data files into a hash (incl. named subsections)
 
 
-* home  :: [github.com/datatxt/iniparser](https://github.com/datatxt/iniparser)
-* bugs  :: [github.com/datatxt/iniparser/issues](https://github.com/datatxt/iniparser/issues)
+* home  :: [github.com/rubycoco/core](https://github.com/rubycoco/core)
+* bugs  :: [github.com/rubycoco/core/issues](https://github.com/rubycoco/core/issues)
 * gem   :: [rubygems.org/gems/iniparser](https://rubygems.org/gems/iniparser)
 * rdoc  :: [rubydoc.info/gems/iniparser](http://rubydoc.info/gems/iniparser)
-* forum :: [groups.google.com/group/wwwmake](http://groups.google.com/group/wwwmake)
 
 
 
@@ -89,7 +88,7 @@ puts hash['section2']['key4']
 puts hash['section2']['blank']
 #=> ''
 puts hash['section2']['blank2']
-#=> ''      
+#=> ''
 puts hash['section3']['http://example.com']['title']
 #=> 'A rose is a rose is a rose, eh?'
 puts hash['section3']['http://example.com']['title2']
@@ -241,7 +240,7 @@ NEEDSPEELING
 # data is case sensitive and may be preserved by the application program.
 
 # An optional equals sign can be used to separate configuration parameter data
-# from the option name. This is dropped by the parser. 
+# from the option name. This is dropped by the parser.
 
 # A configuration option may take multiple parameters separated by commas.
 # Leading and trailing whitespace around parameter names and parameter data fields
@@ -266,8 +265,8 @@ resulting in:
 ### Q: Why not use TOML (Tom's Obvious, Minimal Language)?
 
 The IniParser returns a simple (nested) hash table and
-all values are always strings, period 
-(no auto-magic type inference or casting) and you MUST always 
+all values are always strings, period
+(no auto-magic type inference or casting) and you MUST always
 use strings "unquoted" e.g.
 
     title = Planet Open Data News
@@ -276,21 +275,21 @@ instead of requiring "typed" quoted string values:
 
     title = "Planet Open Data News"
 
-Yes, TOML is great for more "advanced" INI configurations / settings 
-that require (strong) data types, 
-nested lists, inline arrays, and much more. 
+Yes, TOML is great for more "advanced" INI configurations / settings
+that require (strong) data types,
+nested lists, inline arrays, and much more.
 
 
 ### Q: Why not use `IniFile` - the most popular library (10+ million downloads and counting)?
 
 Again the IniParser returns a simple (nested) "standard" hash table and
-all values are always strings, period 
-(no auto-magic type inference or casting 
-e.g. no conversion to bool (for true/false) 
-or numbers (for 1,2, etc.). 
-No wrapper around Hash or anything. Here be dragons ;-). 
+all values are always strings, period
+(no auto-magic type inference or casting
+e.g. no conversion to bool (for true/false)
+or numbers (for 1,2, etc.).
+No wrapper around Hash or anything. Here be dragons ;-).
 
-The popular IniFile CANNOT handle properties without values. Example: 
+The popular IniFile CANNOT handle properties without values. Example:
 
 ```
 [http]
@@ -355,6 +354,3 @@ BUT no dot (`.`) for now.
 The `iniparser` scripts are dedicated to the public domain.
 Use it as you please with no restrictions whatsoever.
 
-## Questions? Comments?
-
-Post them to the [wwwmake forum](http://groups.google.com/group/wwwmake). Thanks!

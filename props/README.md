@@ -1,7 +1,7 @@
 # `props` -  Manage Settings Hierarchies (Commandline, User, Home, Defaults, etc.)
 
-* home  :: [github.com/rubylibs/props](https://github.com/rubylibs/props)
-* bugs  :: [github.com/rubylibs/props/issues](https://github.com/rubylibs/props/issues)
+* home  :: [github.com/rubycoco/core](https://github.com/rubycoco/core)
+* bugs  :: [github.com/rubycoco/core/issues](https://github.com/rubycoco/core/issues)
 * gem   :: [rubygems.org/gems/props](https://rubygems.org/gems/props)
 * rdoc  :: [rubydoc.info/gems/props](http://rubydoc.info/gems/props)
 
@@ -137,7 +137,3 @@ of choice.
 The `props` scripts are dedicated to the public domain.
 Use it as you please with no restrictions whatsoever.
 
-
-## Questions? Comments?
-
-Post them to the [wwwmake forum](http://groups.google.com/group/wwwmake). Thanks!

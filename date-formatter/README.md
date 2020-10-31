@@ -1,17 +1,16 @@
 # date-formatter - date formatter by example; auto-builds the strftime format string from an example date
 
 
-* home  :: [github.com/feedreader/pluto](https://github.com/feedreader/pluto)
-* bugs  :: [github.com/feedreader/pluto/issues](https://github.com/feedreader/pluto/issues)
+* home  :: [github.com/rubycoco/core](https://github.com/rubycoco/core)
+* bugs  :: [github.com/rubycoco/core/issues](https://github.com/rubycoco/core/issues)
 * gem   :: [rubygems.org/gems/date-formatter](https://rubygems.org/gems/date-formatter)
 * rdoc  :: [rubydoc.info/gems/date-formatter](http://rubydoc.info/gems/date-formatter)
-* forum :: [groups.google.com/group/wwwmake](http://groups.google.com/group/wwwmake)
 
 
 
 ## Usage
 
-The date by example lets you format dates e.g. "January 02, 2006" 
+The date by example lets you format dates e.g. "January 02, 2006"
 using an example as a format string e.g "January 02, 2006" instead of the classic strftime format specifier e.g. "%B %d, %Y". The date by example adds:
 
 - `String#to_strftime`
@@ -99,7 +98,7 @@ class NilClass
 end
 ```
 
-For convenience the new `NilClass#format` will catch format calls on `nil`  
+For convenience the new `NilClass#format` will catch format calls on `nil`
 and NOT crash but return an empty string
 following the `NilClass#to_s` example:
 
@@ -116,7 +115,3 @@ p nil.to_s                                 #=> ""
 The `date-formatter` scripts are dedicated to the public domain.
 Use it as you please with no restrictions whatsoever.
 
-## Questions? Comments?
-
-Send them along to the [wwwmake Forum/Mailing List](http://groups.google.com/group/wwwmake).
-Thanks!

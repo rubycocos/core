@@ -1,8 +1,8 @@
 # logutils - Another Logger in Ruby
 
 
-* home :: [github.com/rubylibs/logutils](https://github.com/rubylibs/logutils)
-* bugs :: [github.com/rubylibs/logutils/issues](https://github.com/rubylibs/logutils)
+* home :: [github.com/rubycoco/core](https://github.com/rubycoco/core)
+* bugs :: [github.com/rubycoco/core/issues](https://github.com/rubycoco/core)
 * gem  :: [rubygems.org/gems/logutils](https://rubygems.org/gems/logutils)
 * rdoc :: [rubydoc.info/gems/logutils](http://rubydoc.info/gems/logutils)
 
@@ -21,7 +21,7 @@ Start by getting a logger e.g.:
 or
 
     include LogUtils
-   
+
     logger = Logger.new
 
 now you're ready to log using the methods `#debug`, `#info`, `#warn`, etc.
@@ -65,7 +65,7 @@ Example:
 
     class SampleClass
       include Logging
-    
+
       def initialize
         logger.info 'hello SampleClass'
       end
@@ -85,7 +85,7 @@ Example:
 [sport.db.ruby](https://github.com/sportdb/sport.db.ruby) - `sport.db` Command Line Tool
 
 [Sportbook](https://github.com/openbookie) - A free, open source sports betting pool
-in Ruby on Rails (version 3.2 and up). 
+in Ruby on Rails (version 3.2 and up).
 
 
 ## Todos

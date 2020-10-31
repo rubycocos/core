@@ -8,10 +8,10 @@ Hoe.spec 'props' do
   self.summary = 'props - Manage Settings Hierachies (Commandline, User, Home, Defaults, etc.)'
   self.description = summary
 
-  self.urls    = ['https://github.com/rubylibs/props']
+  self.urls    = { home: 'https://github.com/rubycoco/core' }
 
   self.author  = 'Gerald Bauer'
-  self.email   = 'wwwmake@googlegroups.com'
+  self.email   = 'ruby-talk@ruby-lang.org'
 
   # switch extension to .markdown for gihub formatting
   self.readme_file  = 'README.md'

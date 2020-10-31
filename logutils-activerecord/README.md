@@ -1,7 +1,7 @@
 # logutils-activerecord  - Another Logger - Addon for Database Support (LogDb, Log Model etc.)
 
-* home :: [github.com/rubylibs/logutils](https://github.com/rubylibs/logutils)
-* bugs :: [github.com/rubylibs/logutils/issues](https://github.com/rubylibs/logutils)
+* home :: [github.com/rubycoco/core](https://github.com/rubycoco/core)
+* bugs :: [github.com/rubycoco/core/issues](https://github.com/rubycoco/core/issues)
 * gem  :: [rubygems.org/gems/logutils-activerecord](https://rubygems.org/gems/logutils-activerecord)
 * rdoc :: [rubydoc.info/gems/logutils-activerecord](http://rubydoc.info/gems/logutils-activerecord)
 
@@ -31,23 +31,23 @@ To clean out all log records from the database use:
 
     require 'logutils'
     require 'logutils/activerecord'   # NOTE: will also require 'active_record'
-    
+
     include LogUtils    # lets you use Logger instead of LogUtils::Logger
-    
+
     logger = Logger[ 'Test' ]
     logger.info 'hello LogUtils'
-    
+
     LOG_DB_CONFIG = {
       adapter:   'sqlite3',
       database:  './log.db'
     }
-    
+
     pp LOG_DB_CONFIG
     ActiveRecord::Base.establish_connection( LOG_DB_CONFIG )
-    
+
     LogDb.create
     LogDb.setup
-    
+
     logger.info 'hola LogUtils'
     logger.warn 'servus LogUtils'
 

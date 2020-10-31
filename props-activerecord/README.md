@@ -2,8 +2,8 @@
 
 Manage Setting Hierarchies Addon for Database Support (ConfDb, Props Model, etc.)
 
-* home  :: [github.com/rubylibs/props](https://github.com/rubylibs/props)
-* bugs  :: [github.com/rubylibs/props/issues](https://github.com/rubylibs/props/issues)
+* home  :: [github.com/rubycoco/core](https://github.com/rubycoco/core)
+* bugs  :: [github.com/rubycoco/core/issues](https://github.com/rubycoco/core/issues)
 * gem   :: [rubygems.org/gems/props-activerecord](https://rubygems.org/gems/props-activerecord)
 * rdoc  :: [rubydoc.info/gems/props-activerecord](http://rubydoc.info/gems/props-activerecord)
 

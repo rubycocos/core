@@ -1,11 +1,10 @@
 # date-formats - read / parse and print dates (and times) from around the world
 
 
-* home  :: [github.com/sportdb/sport.db](https://github.com/sportdb/sport.db)
-* bugs  :: [github.com/sportdb/sport.db/issues](https://github.com/sportdb/sport.db/issues)
+* home  :: [github.com/rubycoco/core](https://github.com/rubycoco/core)
+* bugs  :: [github.com/rubycoco/core/issues](https://github.com/rubycoco/core/issues)
 * gem   :: [rubygems.org/gems/date-formats](https://rubygems.org/gems/date-formats)
 * rdoc  :: [rubydoc.info/gems/date-formats](http://rubydoc.info/gems/date-formats)
-* forum :: [opensport](http://groups.google.com/group/opensport)
 
 
 ## Usage
@@ -176,9 +175,3 @@ And so on.
 The `date-formats` scripts are dedicated to the public domain.
 Use it as you please with no restrictions whatsoever.
 
-
-## Questions? Comments?
-
-Send them along to the
-[Open Sports & Friends Forum/Mailing List](http://groups.google.com/group/opensport).
-Thanks!

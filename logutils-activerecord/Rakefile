@@ -3,28 +3,29 @@ require './lib/logutils/activerecord/version.rb'
 
 
 Hoe.spec 'logutils-activerecord' do
-  
+
   self.version = LogDb::VERSION
-  
+
   self.summary = 'Another Logger - Addon for Database Support (LogDb, Log Model etc.)'
   self.description = summary
 
-  self.urls    = ['https://github.com/rubylibs/logutils']
+  self.urls    = { home: 'https://github.com/rubycoco/core' }
 
   self.author  = 'Gerald Bauer'
-  self.email   = 'opensport@googlegroups.com'
+  self.email   = 'ruby-talk@ruby-lang.org'
+
 
   # switch extension to .markdown for gihub formatting
   #  -- Note: auto-changed when included in manifest
   self.readme_file  = 'README.md'
   self.history_file = 'HISTORY.md'
-  
+
   self.licenses = ['Public Domain']
 
   self.extra_deps = [
     ['logutils', '>=0.6.1'],
     ['activerecord'],  # Note: will include activesupport,etc.
-  ]  
+  ]
 
   self.spec_extras = {
     required_ruby_version: '>= 1.9.2'

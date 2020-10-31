@@ -9,10 +9,10 @@ Hoe.spec 'logutils' do
   self.summary = 'Another Logger'
   self.description = summary
 
-  self.urls    = ['https://github.com/rubylibs/logutils']
+  self.urls    = { home: 'https://github.com/rubycoco/core' }
 
   self.author  = 'Gerald Bauer'
-  self.email   = 'opensport@googlegroups.com'
+  self.email   = 'ruby-talk@ruby-lang.org'
 
   # switch extension to .markdown for gihub formatting
   #  -- NB: auto-changed when included in manifest
