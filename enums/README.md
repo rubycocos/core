@@ -4,7 +4,7 @@ enums library / gem - safe enum / enumeration types - a set of symbolic keys bou
 
 
 * home  :: [github.com/rubycoco/core](https://github.com/rubycoco/core)
-* bugs  :: [github.com/ruybococo/core/issues](https://github.com/rubycoco/core/issues)
+* bugs  :: [github.com/rubycoco/core/issues](https://github.com/rubycoco/core/issues)
 * gem   :: [rubygems.org/gems/enums](https://rubygems.org/gems/enums)
 * rdoc  :: [rubydoc.info/gems/enums](http://rubydoc.info/gems/enums)
 
