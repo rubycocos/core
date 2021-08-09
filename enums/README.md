@@ -2,10 +2,12 @@
 
 enums library / gem - safe enum / enumeration types - a set of symbolic keys bound to unique integer numbers (incl. bit flags option)
 
-* home  :: [github.com/s6ruby/enums](https://github.com/s6ruby/enums)
-* bugs  :: [github.com/s6ruby/enums/issues](https://github.com/s6ruby/enums/issues)
+
+* home  :: [github.com/rubycoco/core](https://github.com/rubycoco/core)
+* bugs  :: [github.com/ruybococo/core/issues](https://github.com/rubycoco/core/issues)
 * gem   :: [rubygems.org/gems/enums](https://rubygems.org/gems/enums)
 * rdoc  :: [rubydoc.info/gems/enums](http://rubydoc.info/gems/enums)
+
 
 
 ##  Why `enums` in Ruby?
