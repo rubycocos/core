@@ -2,6 +2,11 @@
 
 Gems:
 
+- [**enums**](enums) - safe enum / enumeration types - a set of symbolic keys bound to unique integer numbers (incl. bit flags option)
+
+<!-- break -->
+
+
 - [**logutils**](logutils)  - (lite) logger library
 - [logutils-activerecord](logutils-activerecord) - addon for database support (e.g. LogDb, log model etc.)
 - [logutils-admin](logutils-admin) - addon for browsing logs in database (e.g. LogDb, log model etc.)
