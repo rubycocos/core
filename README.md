@@ -29,6 +29,7 @@ Gems:
 
 <!-- break -->
 - [records](records) -  frozen / immutable structs with copy on updates
+- [safedata](safedata) - safe (algebraic) union data types with (enumerated) variants
 
 
 
