@@ -4,6 +4,8 @@ Gems:
 
 - [**bytes**](bytes) - bits 'n' bytes made easy/easier incl. new buffer helper / wrapper class to help with the string byte vs character dichotomy
 - [**enums**](enums) - safe enum / enumeration types - a set of symbolic keys bound to unique integer numbers (incl. bit flags option)
+- [**safebool**](safebool) - safe bool / boolean type adds `Bool()`, `to_b`, `parse_bool` / `to_bool`, `bool?`, `false?`, `true?`, `true.is_a?(Bool)==true`, `false.is_a?(Bool)==true`, and more
+
 
 <!-- break -->
 
