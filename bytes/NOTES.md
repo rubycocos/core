@@ -39,6 +39,12 @@ ByteBuffer in nio4r gem
 - <https://www.rubydoc.info/gems/nio4r/2.5.2/NIO/ByteBuffer>
 
 
+Buffer in FFI gem
+- <https://rubydoc.info/gems/ffi/FFI/Buffer>
+
+
+
+
 ##  In other languages
 
 - see python  - uses string and bytes (immutable) and bytearray (mutable)
