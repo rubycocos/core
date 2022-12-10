@@ -64,8 +64,14 @@ class Bytes
   def initialize( bin=String.new )
     ## note: for now will NOT dup(licate) passed in binary array
     ##    you only get a new binary array if no arg passed in e.g. Bytes.new
-    raise ArgumentError, "Bytes.new - BINARY/ASCII-8BIT encoding expected; got: #{bin.encoding} for string >#{bin}<"  if bin.encoding != Encoding::ASCII_8BIT
-    @bin = bin
+    @bin  = if bin.encoding != Encoding::ASCII_8BIT
+             puts "!! WARN - Bytes.new - BINARY/ASCII-8BIT encoding expected; got: #{bin.encoding} for string:"
+             pp bin
+
+             bin.b
+            else
+               bin
+            end
   end
 
 
