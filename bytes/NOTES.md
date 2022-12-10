@@ -16,13 +16,17 @@ or use Bytes for immutable ByteArrays and Buffer for mutable ByteArrays ????
 
 
 
-### StringIO
+### class StringIO
 StringIO is really like a StringBuffer with file-like read/write access
 
 
-### IO::Buffer
+### class IO::Buffer
 
 see <https://ruby-doc.org/core-3.1.2/IO/Buffer.html>
+
+### class OpenSSL::Buffering::Buffer
+
+see <https://docs.ruby-lang.org/en/master/OpenSSL/Buffering/Buffer.html>
 
 
 ###  More
