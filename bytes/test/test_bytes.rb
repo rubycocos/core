@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 ###
 #  to run use
 #     ruby -I ./lib -I ./test test/test_bytes.rb
@@ -10,37 +8,60 @@ require 'helper'
 
 class TestBytes < MiniTest::Test
 
+
+
   def test_hex
-    assert String.new( "6162")  == Bytes.to_hex( "ab" )
-    assert String.new( "6162")  == bytes_to_hex( "ab" )
-    assert String.new( "6162")  == "ab".b_to_h
-    assert String.new( "6162")  == "ab".btoh
-    assert String.new( "6162")  == "ab".h
-    assert String.new( "6162")  == Bytes.to_hex( "\x61\x62" )
-    assert String.new( "6162")  == bytes_to_hex( "\x61\x62" )
-    assert String.new( "6162")  == "\x61\x62".b_to_h
-    assert String.new( "6162")  == "\x61\x62".btoh
-    assert String.new( "6162")  == "\x61\x62".h
-    assert Encoding::UTF_8      == Bytes.to_hex( "ab" ).encoding
+     hex = '6162'
 
-    assert Bytes.new( "ab" )    == Bytes.from_hex( "6162" )
-    assert Bytes.new( "ab" )    == hex_to_bytes( "6162" )
-    assert Bytes.new( "ab" )    == "6162".h_to_b
-    assert Bytes.new( "ab" )    == "6162".htob
-    assert Bytes.new( "ab" )    == Bytes.from_hex( "0x6162" )
-    assert Bytes.new( "ab" )    == hex_to_bytes( "0x6162" )
-    assert Bytes.new( "ab" )    == "0x6162".h_to_b
-    assert Bytes.new( "ab" )    == "0x6162".htob
-    assert Encoding::ASCII_8BIT == Bytes.from_hex( "6162" ).encoding
+    assert_equal hex, Bytes.bin_to_hex( 'ab'.b )
+    assert_equal hex, Bytes.bytes_to_hex( 'ab'.b )
+    assert_equal hex, 'ab'.b.to_hex
 
-    assert Bytes.new( "ab" )    == Bytes( "6162" )
-    assert Bytes.new( "ab" )    == Bytes( "0x6162" )
-    assert Bytes.new( "6162" )  == Bytes( "6162".b )
-    assert Bytes.new( "ab" )    == Bytes( "ab".b )
-    assert Bytes.new( "ab")     == Bytes( "\x61\x62".b )
-    assert Encoding::ASCII_8BIT == Bytes( "6162" ).encoding
-    assert Encoding::ASCII_8BIT == Bytes( "6162".b ).encoding
-    assert Encoding::ASCII_8BIT == Bytes( "ab".b ).encoding
+    assert_equal hex,  Bytes.bin_to_hex( "\x61\x62".b )
+    assert_equal hex,  Bytes.bytes_to_hex( "\x61\x62".b )
+    assert_equal hex,  "\x61\x62".b.to_hex
+
+    assert_equal Encoding::UTF_8,  Bytes.bin_to_hex( 'ab'.b ).encoding
+
+
+
+     bin = "\x61\x62".b   ## note: same as 'ab'.b
+     bytes = Bytes.new( bin )
+
+    assert_equal bytes,   Bytes.from_hex( '6162' )
+    assert_equal bin,   Bytes.hex_to_bin( '6162' )
+    assert_equal bytes,   Bytes.from_hex( "0x6162" )
+    assert_equal bin,   Bytes.hex_to_bin( "0x6162" )
+
+    assert_equal Encoding::ASCII_8BIT, Bytes.from_hex( "6162" ).encoding
+    assert_equal Encoding::BINARY, Bytes.from_hex( "6162" ).encoding
+    assert_equal Encoding::ASCII_8BIT, Encoding::BINARY
+
+
+    bytes = Bytes.new( 'ab'.b )
+
+    assert_equal  bytes, Bytes( '6162' )
+    assert_equal  bytes, Bytes( '0x6162' )
+
+    assert_equal  bytes,  Bytes( "ab".b )
+    assert_equal  bytes,  Bytes( "\x61\x62".b )
+
+    assert_equal  Encoding::ASCII_8BIT,  Bytes( "6162" ).encoding
+    assert_equal  Encoding::ASCII_8BIT, Bytes( "ab".b ).encoding
+
+    bytes = Bytes.new( '6162'.b )
+    assert_equal  bytes,  Bytes( "6162".b )
+    assert_equal  Encoding::ASCII_8BIT, Bytes( "6162".b ).encoding
+  end
+
+  def test_is_hex?
+     assert  Bytes.is_hex?( '0x' )
+     assert  Bytes.is_hex?( '0X' )
+     assert  Bytes.is_hex?( '' )
+     assert  Bytes.is_hex?( '0xff' )
+     assert  Bytes.is_hex?( 'ff' )
+
+     assert_equal  false,  Bytes.is_hex?( 'xx' )
   end
 
 end  # class TestBytes

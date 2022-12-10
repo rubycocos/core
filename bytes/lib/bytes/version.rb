@@ -1,12 +1,11 @@
-# encoding: utf-8
 
-
-
-class Bytes
+module Cocos
+module Module
+module Bytes
 
   MAJOR = 0
   MINOR = 1
-  PATCH = 0
+  PATCH = 1
   VERSION = [MAJOR,MINOR,PATCH].join('.')
 
   def self.version
@@ -21,4 +20,6 @@ class Bytes
     "#{File.expand_path( File.dirname(File.dirname(File.dirname(__FILE__))) )}"
   end
 
-end # class Bytes
+end # module Bytes
+end # module Module
+end # module Cocos

@@ -1,14 +1,16 @@
 require 'hoe'
 require './lib/bytes/version.rb'
 
+
 Hoe.spec 'bytes' do
 
-  self.version = Bytes::VERSION
+  self.version = Cocos::Module::Bytes::VERSION
 
   self.summary = "bytes"
   self.description = summary
 
-  self.urls    = ['https://github.com/typesigs/bytes']
+
+  self.urls    = { home: 'https://github.com/rubycocos/core' }
 
   self.author  = 'Gerald Bauer'
   self.email   = 'wwwmake@googlegroups.com'

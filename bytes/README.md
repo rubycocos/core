@@ -1,10 +1,9 @@
-
 # Bytes
 
 bytes - bits 'n' bytes made easy/easier incl. new buffer helper / wrapper class to help with the string byte vs character dichotomy
 
-* home  :: [github.com/typesigs/bytes](https://github.com/typesigs/bytes)
-* bugs  :: [github.com/typesigs/bytes/issues](https://github.com/typesigs/bytes/issues)
+* home  :: [github.com/rubycocos/core](https://github.com/rubycocos/core)
+* bugs  :: [github.com/rubycocos/core/issues](https://github.com/rubycocos/core/issues)
 * gem   :: [rubygems.org/gems/bytes](https://rubygems.org/gems/bytes)
 * rdoc  :: [rubydoc.info/gems/bytes](http://rubydoc.info/gems/bytes)
 
