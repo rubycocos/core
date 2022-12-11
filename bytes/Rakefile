@@ -6,7 +6,7 @@ Hoe.spec 'bytes' do
 
   self.version = Cocos::Module::Bytes::VERSION
 
-  self.summary = "bytes"
+  self.summary = "bytes - bits 'n' bytes made easy/easier incl. new buffer helper / wrapper class to help with the string byte vs character dichotomy"
   self.description = summary
 
 

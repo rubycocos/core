@@ -14,11 +14,11 @@ class TestBytes < MiniTest::Test
      hex = '6162'
 
     assert_equal hex, Bytes.bin_to_hex( 'ab'.b )
-    assert_equal hex, Bytes.bytes_to_hex( 'ab'.b )
+    assert_equal hex, Bytes.btoh( 'ab'.b )
     assert_equal hex, 'ab'.b.to_hex
 
     assert_equal hex,  Bytes.bin_to_hex( "\x61\x62".b )
-    assert_equal hex,  Bytes.bytes_to_hex( "\x61\x62".b )
+    assert_equal hex,  Bytes.btoh( "\x61\x62".b )
     assert_equal hex,  "\x61\x62".b.to_hex
 
     assert_equal Encoding::UTF_8,  Bytes.bin_to_hex( 'ab'.b ).encoding

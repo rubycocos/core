@@ -246,12 +246,72 @@ To be continued ...
 
 
 
-
-
-
 ## Usage
 
-To be done
+### BytesHelper  - From Bytes (Binary String) to Hex(adecimal) String and Back
+
+``` ruby
+require 'bytes
+
+Bytes.bin_to_hex( "\x61\x62".b )
+#=> '6162'
+
+Bytes.hex_to_bin( '6162' )     # or
+Bytes.hex_to_bin( '0x6162' )   # or
+#=> "\x61\x62".b
+
+Bytes.is_hex?( '6162' )
+Bytes.is_hex?( '0x6162' )
+Bytes.is_hex?( '' )     # empty string or
+Bytes.is_hex?( '0x' )   # empty hex string
+#=> true
+
+Bytes.is_hex?( 'xyz' )
+Bytes.is_hex?( '0xyz' )
+#=> false
+
+Bytes.hex_to_bin( 'xzy' )  # or
+Bytes.hex_to_bin( '0xxzy' )
+#=>  raises TypeError - non-hexadecimal digit found
+```
+
+Note:  You can use the shorter alternate alias
+names  `btoh` or `htob`
+for `bin_to_hex` and `hex_to_bin`.
+
+
+Or use the mixed-in String class variants. Example:
+
+``` ruby
+"\x61\x62".b.bin_to_hex   # or
+"\x61\x62".b.btoh
+#=> '6162'
+
+'6162'.hex_to_bin      # or
+'6162'.htob            # or
+'0x6162'.hex_to_bin    # or
+'0x6162'.htob          # or
+#=> "\x61\x62".b
+
+'6162'.is_hex?
+'0x6162'is_hex?
+''.is_hex?        # empty string or
+'0x'.is_hex?      # empty hex string
+#=> true
+
+'xyz'is_hex?
+'0xyz'.is_hex?
+#=> false
+
+'xzy'.htob   # or
+'0xxzy'.htob
+#=>  raises TypeError - non-hexadecimal digit found
+```
+
+and so on.
+
+
+
 
 
 ## License

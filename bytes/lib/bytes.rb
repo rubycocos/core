@@ -6,6 +6,7 @@ require 'forwardable'
 require_relative 'bytes/version'    # note: let version always go first
 
 
+
 module BytesHelper
   def hex_to_bin( hex )
     ## todo/fix:  do an argument regex hex check!!!!
@@ -18,8 +19,8 @@ module BytesHelper
       [hex].pack('H*')
     end
   end
-  alias_method :hex_to_bytes, :hex_to_bin
-  alias_method :h_to_b,       :hex_to_bin
+  ## alias_method :hex_to_bytes, :hex_to_bin
+  ## alias_method :h_to_b,       :hex_to_bin
   alias_method :htob,         :hex_to_bin
 
 
@@ -32,8 +33,8 @@ module BytesHelper
     hex.encode!( Encoding::UTF_8 )
     hex
   end
-  alias_method :bytes_to_hex, :bin_to_hex
-  alias_method :b_to_h,       :bin_to_hex
+  ## alias_method :bytes_to_hex, :bin_to_hex
+  ## alias_method :b_to_h,       :bin_to_hex
   alias_method :btoh,         :bin_to_hex
 
 
@@ -81,8 +82,8 @@ class Bytes
                         :size, :length
 
 
-  def to_s() Bytes.bin_to_hex( @bin ); end
-  alias_method :to_hex, :to_s
+  def to_hex() Bytes.bin_to_hex( @bin ); end
+  alias_method :to_s, :to_hex
 
   def b()  @bin; end
 
@@ -119,12 +120,15 @@ end
 
 
 class String
-  def to_hex()  Bytes.bin_to_hex( self ); end
-  ## add more aliases e.g. bin_to_hex or btoh or b_to_h or such - why? why not?
-
+  def bin_to_hex()  Bytes.bin_to_hex( self ); end
+  alias_method :btoh,   :bin_to_hex
+  alias_method :to_hex, :bin_to_hex
   ## note: built-in String#hex returns string converted
-  ##                    to Integer  -same as String.to_i(16) !!!!
-end
+  ##                    to Integer  - same as String.to_i(16) !!!!
+
+  def hex_to_bin()  Bytes.hex_to_bin( self ); end
+  alias_method :htob, :hex_to_bin
+end   # class String
 
 
 
