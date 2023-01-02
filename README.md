@@ -46,8 +46,9 @@ Gems:
 After programming in ruby for more than 10+ years and [sharing / publishing 200+ gems](https://rubygems.org/profiles/geraldbauer)
 and - yes, believe it or not - getting perma-banned ("cancel-cultured" ) for life twice (thanks to Richard Schneeman, Brandon Weaver, et al)
 on r/reddit and ruby-talk - see the [public service announcement](https://old.reddit.com/r/planetruby/comments/swzz2h/public_service_announcement_this_reddit_here_is/) for some background  -
-I (Gerald Bauer) will try to keep a log on how to make
+I ([Gerald Bauer](https://github.com/geraldb)) will try to keep a public log on how to make
 ruby even more fun by collecting ideas  (mostly backed-up by "real-world" code & monkey patches) right here on this page.   Your questions and comments are more than welcome.
+
 
 
 ### Core Language & Types
@@ -122,7 +123,7 @@ and is an alias for `String#to_i(16)`  or `String#to_i(8)`.
 "0x41".hex        #=> 65 - same as "41" - 0x hex prefix gets
 ```
 
-The idea for ruby 3.0 is to redefine `String#hex`  to return a hex string.
+The idea for ruby 4.0 is to redefine `String#hex`  to return a hex string.
 Another idea is to use a different name (and aliases)
 such as `String#hexdump` or `String#hexdigest` and so on.
 But somehow the matching symetry  of `String#hex` and `Kernel#hex`
