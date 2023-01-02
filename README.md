@@ -41,7 +41,7 @@ Gems:
 
 
 
-## If I Were ~~King~~ Matz (aka Yukihiro Matsumoto) - Ideas For Ruby 3.0   - What's Broken & Missing in Ruby 2.x and How To Fix It
+## If I Were ~~King~~ Matz (aka Yukihiro Matsumoto) - Ideas For Ruby 4.0   - What's Broken & Missing in Ruby 3.x and How To Fix It
 
 After programming in ruby for more than 10+ years and [sharing / publishing 200+ gems](https://rubygems.org/profiles/geraldbauer)
 and - yes, believe it or not - getting perma-banned ("cancel-cultured" ) for life twice (thanks to Richard Schneeman, Brandon Weaver, et al)
@@ -188,11 +188,12 @@ Are there any auto-include quick-starter prelude & prolog gems
 out there in rubyland?
 
 
-You could argue ruby is dead and rails is the all-  belong to use prelude & prolog quick-starter gem.
+You could argue ruby is dead and rails is the "All your base are belong to us"
+prelude & prolog quick-starter gem.
 
 Why not make the concept of
 auto-include quick-starter prelude & prolog gems
-more popular and offer more options.
+more popular and offer more options?
 
 
 See the [cocos (code commons) gem](https://github.com/rubycocos/cocos) for a start on an (off-rails)
@@ -218,7 +219,7 @@ Background Reading:
 
 ### Standard Project Scaffolders
 
-Did you know?  In rubyland everone rolls their own project scaffolder (bundler, hoe, rails, jekyll, etc.)  -  why not use a shared project scaffolder open to everyone?
+Did you know?  In rubyland everyone rolls their own project scaffolder (bundler, hoe, rails, jekyll, etc.)  -  why not use a shared project scaffolder open to everyone?
 
 
 See the [quik gem series](https://github.com/quikstart) for a start.
