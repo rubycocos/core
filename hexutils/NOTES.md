@@ -55,8 +55,8 @@ HexString provides two String extension methods:
 * `String#to_hex_string` explodes a string of binary data into human-readable hex tuples, and 
 * `String#to_byte_string` converts a string of human-readable hex digits into the corresponding bytes.
 
-Examples
---------
+**Examples**
+
 
     # Convert data to human-readable hex tuples:
     >> "hello".to_hex_string
@@ -78,8 +78,9 @@ Examples
     >> "hello".to_hex_string(false)
     => "68656c6c6f"
 
-Motivation
-----------
+
+**Motivation**
+
 When working with binary message or file formats, we often want to have a peek
 at some segment of binary data and talk about individual byte values in
 human-relatable terms.
