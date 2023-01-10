@@ -45,10 +45,10 @@ encode_hex( "\xff\xff".b )
 #=> "ffff"
 ```
 
-Note:  The decode_hex `decode_hex` (or `hex`)
+Note:  The  `decode_hex` (or `hex`) helper
 allows all variants of upper- and lowercase
 with or without the `0x`/`0X` prefix
-e.g. '0XFFFF', 'FFFF', 'ffff', etc.
+e.g. `0XFFFF`, `FFFF`, `ffff`, etc.
 For convenience whitespace incl.
 newlines are allowed anywhere.
 
@@ -74,8 +74,8 @@ newlines are allowed anywhere.
 ```
 
 
-NOTE:  The "old" `String#hex` method that returns a integer number
-from a hex(adecimal) string gets "monkey patched" or is that rewired?
+NOTE:  The "old" `String#hex` method that returns an integer number
+from a hex(adecimal) string gets rewired or is that "monkey patched"
 to  `String#old_hex` and `String#hexnum`.
 
 
