@@ -94,5 +94,31 @@ We were inspired to publish this humble Gem after we found ourselves copying it
 by hand from project to project over the course of several years.
 
 
+### string2hex gem
 
+- <https://github.com/kadalscript/string2hex>
+
+Simple converter, binary string to hex string
+
+**Usage**
+
+```ruby
+"foobar".string2hex # => "666f6f626172"
+
+"666f6f626172".hex2string # => "foobar"
+```
+
+**Source**
+
+```ruby
+class String
+  def string2hex
+    self.unpack('H*').first
+  end
+  
+  def hex2string
+    [self].pack('H*')
+  end
+end
+```
 
