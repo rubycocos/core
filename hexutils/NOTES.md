@@ -122,3 +122,56 @@ class String
 end
 ```
 
+### byteman gem
+
+- <https://rubygems.org/gems/byteman>
+- <https://github.com/micahshute/byteman>
+
+Simple gem to allow manipulation of data into other forms. Specifically, transform data between byte buffers (integer arrays with every number representing a byte ie an integer from 0-255), hexdigest strings, hex strings, and integers.
+
+**Source**
+
+```ruby
+#...
+
+# hex args
+  # 
+  # input: [Integer or String or Array] accepts any Integer, or a hexdigest String or an integer array (byte buffer) with all numbers between 0-255 inclusive
+  # 
+  # Returns a byte String. 
+  # 
+  # Note -> Automatically pads a 0 nibble to the front of any odd-lengthed hexdigest
+  def self.hex(input)
+    if input.is_a?(Integer)
+      hex(hexdigest(input))
+    elsif input.is_a?(String)
+      hd = input.length.odd? ? "0#{input}" : input
+      [hd].pack("H*")
+    elsif input.is_a?(Array)
+      input.pack("C*")
+    else
+      raise ArgumentError.new("Input must be a string, number, or byte array buffer")
+    end
+  end
+
+  # hexdigest args
+  # 
+  # arg: [Integer or String or Array] accepts any Integer or String or Array of Integers from 0-255 
+  # 
+  # Returns a hexdigest string
+  def self.hexdigest(arg)
+    if arg.is_a?(Integer)
+      dig = arg.to_s(16)
+      dig.length.odd? ? "0#{dig}" : dig
+    elsif arg.is_a?(Array) && arg.all?{|a| a.between?(0,255)}
+      buf2digest(arg)
+    elsif arg.is_a?(String)
+      arg.unpack("H*").first
+    else
+      raise ArgumentError.new("Input must be an integer, Array of integers between 0-255, or String")
+    end
+  end
+
+#...
+
+```
