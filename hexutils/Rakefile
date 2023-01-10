@@ -1,0 +1,30 @@
+require 'hoe'
+
+
+Hoe.spec 'hexutils' do
+
+  self.version = '1.0.0'
+
+  self.summary = "hexutils - hex(adecimal) encode/decode helpers 'n' more for String, NilClass, Kernel and more"
+  self.description = summary
+
+  self.urls    = { home: 'https://github.com/rubycocos/core' }
+
+  self.author  = 'Gerald Bauer'
+  self.email   = 'wwwmake@googlegroups.com'
+
+  # switch extension to .markdown for gihub formatting
+  self.readme_file  = 'README.md'
+  self.history_file = 'CHANGELOG.md'
+
+  self.extra_deps = [
+  ]
+
+  self.licenses = ['Public Domain']
+
+  self.spec_extras = {
+    required_ruby_version: '>= 2.3'
+  }
+
+end
+
