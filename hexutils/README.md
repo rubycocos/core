@@ -29,7 +29,7 @@ To make programming hex(adecimal) strings easier
 let's add some encode / decode helpers.
 
 
-### Kernel  - `decode_hex` (or `hex`) and `encode_hex`
+### New in `Kernel` Module  - `decode_hex` (or `hex`) and `encode_hex`
 
 ``` ruby
 require 'hexutils'
@@ -54,7 +54,7 @@ newlines are allowed anywhere.
 
 
 
-### String   - `to_hex` (or `hex`) and `hex?` (or `is_hex?`)
+###  New in `String` Class  - `to_hex` (or `hex`) and `hex?` (or `is_hex?`)
 
 ``` ruby
 # get a hex(a)decimal string from a bin(ary) string
@@ -80,7 +80,7 @@ to  `String#old_hex` and `String#hexnum`.
 
 
 
-### Bonus: NilClass   - to_hex (or hex) and hex? (or is_hex?)
+### Bonus: New in  `NilClass` Class - `to_hex` (or `hex`) and `hex?` (or `is_hex?`)
 
 ``` ruby
 nil.hex?  # or
