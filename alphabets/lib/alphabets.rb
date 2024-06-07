@@ -1,16 +1,22 @@
-# encoding: utf-8
 
+## note - pp now part of ruby core since version ???
+###           check no longer required!!!
 require 'pp'
 
 
 ###
 # our own code
-require 'alphabets/version' # let version always go first
-require 'alphabets/reader'
-require 'alphabets/alphabets'
-require 'alphabets/utils'
-require 'alphabets/variants'
+require_relative 'alphabets/version' # let version always go first
+require_relative 'alphabets/reader'
+require_relative 'alphabets/alphabets'
+require_relative 'alphabets/utils'
+require_relative 'alphabets/variants'
 
+
+##
+##  add globals inside Kernel ??
+##    lets us use alias_method 
+##    what else?   why? why not?
 
 
 ## add "global" convenience helper

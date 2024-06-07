@@ -1,8 +1,8 @@
 # Alphabets
 
-## Unaccent Mappings (116)
+## Unaccent Mappings (118)
 
-ÄäÁáÀàÃãÂâÅåÆæāăĄąÇçĆćČčĎďÐðÉéÈèÊêËëėĘęĚěğİÍíÌìÎîīıÏïŁłÑñŃńŇňÖöŐőÓóÒòÕõÔôøŒœŘřŚśŞşȘșŠšßŢţȚțŤťÞþÜüÚúÙùūŮůÛûÝýŸÿŹźŻżŽž
+ÄäÁáÀàÃãÂâÅåÆæāăĄąÇçĆćČčĎďÐðÉéÈèÊêËëėĘęĚěğİÍíÌìÎîīıÏïŁłÑñŃńŇňŅņÖöŐőÓóÒòÕõÔôøŒœŘřŚśŞşȘșŠšßŢţȚțŤťÞþÜüÚúÙùūŮůÛûÝýŸÿŹźŻżŽž
 
 - **Ä** U+00C4 (196) - LATIN CAPITAL LETTER A WITH DIAERESIS ⇒ A
 - **ä** U+00E4 (228) - LATIN SMALL LETTER A WITH DIAERESIS ⇒ a
@@ -65,6 +65,8 @@
 - **ń** U+0144 (324) - LATIN SMALL LETTER N WITH ACUTE ⇒ n
 - **Ň** U+0147 (327) - LATIN CAPITAL LETTER N WITH CARON ⇒ N
 - **ň** U+0148 (328) - LATIN SMALL LETTER N WITH CARON ⇒ n
+- **Ņ** U+0145 (325) - LATIN CAPITAL LETTER N WITH CEDILLA ⇒ N
+- **ņ** U+0146 (326) - LATIN SMALL LETTER N WITH CEDILLA ⇒ n
 - **Ö** U+00D6 (214) - LATIN CAPITAL LETTER O WITH DIAERESIS ⇒ O
 - **ö** U+00F6 (246) - LATIN SMALL LETTER O WITH DIAERESIS ⇒ o
 - **Ő** U+0150 (336) - LATIN CAPITAL LETTER O WITH DOUBLE ACUTE ⇒ O
@@ -122,9 +124,9 @@
 - **ž** U+017E (382) - LATIN SMALL LETTER Z WITH CARON ⇒ z
 
 
-## Downcase Mappings (80)
+## Downcase Mappings (81)
 
-Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz Ää Áá Àà Ââ Åå Ææ Ąą Ãã Çç Čč Ćć Ďď Ðð Éé Èè Ëë Êê Ęę Ěě İi Íí Ìì Ïï Îî Łł Ńń Ňň Ññ Öö Őő Œœ Óó Òò Ôô Õõ Þþ Řř Śś Şş Șș Šš Ţţ Țț Ťť Üü Úú Ùù Ůů Ûû Ýý Ÿÿ Žž Żż Źź 
+Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz Ää Áá Àà Ââ Åå Ææ Ąą Ãã Çç Čč Ćć Ďď Ðð Éé Èè Ëë Êê Ęę Ěě İi Íí Ìì Ïï Îî Łł Ńń Ňň Ññ Ņņ Öö Őő Œœ Óó Òò Ôô Õõ Þþ Řř Śś Şş Șș Šš Ţţ Țț Ťť Üü Úú Ùù Ůů Ûû Ýý Ÿÿ Žž Żż Źź 
 
 - **A** U+0041 (65) - LATIN CAPITAL LETTER A ⇒ **a** U+0061 (97) - LATIN SMALL LETTER A
 - **B** U+0042 (66) - LATIN CAPITAL LETTER B ⇒ **b** U+0062 (98) - LATIN SMALL LETTER B
@@ -180,6 +182,7 @@ Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz Ä
 - **Ń** U+0143 (323) - LATIN CAPITAL LETTER N WITH ACUTE ⇒ **ń** U+0144 (324) - LATIN SMALL LETTER N WITH ACUTE
 - **Ň** U+0147 (327) - LATIN CAPITAL LETTER N WITH CARON ⇒ **ň** U+0148 (328) - LATIN SMALL LETTER N WITH CARON
 - **Ñ** U+00D1 (209) - LATIN CAPITAL LETTER N WITH TILDE ⇒ **ñ** U+00F1 (241) - LATIN SMALL LETTER N WITH TILDE
+- **Ņ** U+0145 (325) - LATIN CAPITAL LETTER N WITH CEDILLA ⇒ **ņ** U+0146 (326) - LATIN SMALL LETTER N WITH CEDILLA
 - **Ö** U+00D6 (214) - LATIN CAPITAL LETTER O WITH DIAERESIS ⇒ **ö** U+00F6 (246) - LATIN SMALL LETTER O WITH DIAERESIS
 - **Ő** U+0150 (336) - LATIN CAPITAL LETTER O WITH DOUBLE ACUTE ⇒ **ő** U+0151 (337) - LATIN SMALL LETTER O WITH DOUBLE ACUTE
 - **Œ** U+0152 (338) - LATIN CAPITAL LIGATURE OE ⇒ **œ** U+0153 (339) - LATIN SMALL LIGATURE OE

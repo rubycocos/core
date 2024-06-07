@@ -7,7 +7,7 @@
 
 require 'helper'
 
-class TestVariants < MiniTest::Test
+class TestVariants < Minitest::Test
 
   def test_de
     assert_equal [],                             variants( 'Augsburg' )

@@ -7,7 +7,7 @@
 
 require 'helper'
 
-class TestDowncase < MiniTest::Test
+class TestDowncase < Minitest::Test
 
   def test_downcase_i18n
     assert_equal 'abcdefghijklmnopqrstuvwxyz',  downcase_i18n( 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' )

@@ -7,7 +7,7 @@
 
 require 'helper'
 
-class TestUnaccent < MiniTest::Test
+class TestUnaccent < Minitest::Test
 
   def test_de
     assert_equal 'Augsburg',             unaccent( 'Augsburg' )

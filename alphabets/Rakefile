@@ -11,7 +11,7 @@ Hoe.spec 'alphabets' do
   self.urls = { home: 'https://github.com/rubycoco/core' }
 
   self.author = 'Gerald Bauer'
-  self.email  = 'ruby-talk@ruby-lang.org'
+  self.email  = 'gerald.bauer@gmail.com'
 
   # switch extension to .markdown for gihub formatting
   self.readme_file = 'README.md'

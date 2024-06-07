@@ -5,7 +5,7 @@
 
 require 'helper'
 
-class TestReader < MiniTest::Test
+class TestReader < Minitest::Test
 
   def test_parse
     h = Alphabet::Reader.parse( <<TXT )

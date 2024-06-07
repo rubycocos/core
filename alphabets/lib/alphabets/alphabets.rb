@@ -44,6 +44,7 @@ UNACCENT = Reader.parse( <<TXT )
     Ñ N   ñ n
     Ń N   ń n
     Ň N   ň n
+    Ņ N   ņ n        # N/n with cedilla U+0145 / U+0146 (capital / small)
 
     Ö O   ö o
     Ő O   ő o    # hungarian - use OE/oe  - why? (it's not a ligature) why not?
@@ -145,6 +146,7 @@ DOWNCASE = %w[A B C D E F G H I J K L M N O P Q R S T U V W X Y Z].reduce({}) do
     Ń ń
     Ň ň
     Ñ ñ
+    Ņ ņ
 
     Ö ö
     Ő ő
