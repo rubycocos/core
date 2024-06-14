@@ -20,6 +20,8 @@ UNACCENT = Reader.parse( <<TXT )
 
     Ď D   ď d
     Ð D   ð d    # iceland - d
+    Đ D   đ d    #  U+0110/U+0111  - Latin Capital/Small Letter D with Stroke 
+                 #   e.g.  Đorđe Petrović (use dj ??)  (in serbian)
 
     É E   é e
     È E   è e
@@ -40,6 +42,8 @@ UNACCENT = Reader.parse( <<TXT )
     Ï I   ï i
 
     Ł L   ł l
+    Ľ L   ľ l     #  U+013D/U+013E -  Latin Capital/small Letter L with Caron
+                  #   e.g. Ľubomír Tupta  (in slovak)
 
     Ñ N   ñ n
     Ń N   ń n

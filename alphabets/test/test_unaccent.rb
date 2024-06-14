@@ -1,11 +1,9 @@
-# encoding: utf-8
-
 ###
 #  to run use
-#     ruby -I ./lib -I ./test test/test_unaccent.rb
+#     ruby -I ./lib test/test_unaccent.rb
 
 
-require 'helper'
+require_relative  'helper'
 
 class TestUnaccent < Minitest::Test
 
@@ -33,4 +31,11 @@ class TestUnaccent < Minitest::Test
     assert_equal 'Almeria',              unaccent( 'Almería' )
   end
 
+
+  def test_misc
+     # serbian
+     assert_equal 'Dorde Petrovic',   unaccent( 'Đorđe Petrović' )
+     # slovak 
+     assert_equal 'Lubomir Tupta',    unaccent( 'Ľubomír Tupta' )
+  end
 end # class TestUnaccent

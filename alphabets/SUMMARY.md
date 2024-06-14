@@ -1,8 +1,8 @@
 # Alphabets
 
-## Unaccent Mappings (118)
+## Unaccent Mappings (122)
 
-ÄäÁáÀàÃãÂâÅåÆæāăĄąÇçĆćČčĎďÐðÉéÈèÊêËëėĘęĚěğİÍíÌìÎîīıÏïŁłÑñŃńŇňŅņÖöŐőÓóÒòÕõÔôøŒœŘřŚśŞşȘșŠšßŢţȚțŤťÞþÜüÚúÙùūŮůÛûÝýŸÿŹźŻżŽž
+ÄäÁáÀàÃãÂâÅåÆæāăĄąÇçĆćČčĎďÐðĐđÉéÈèÊêËëėĘęĚěğİÍíÌìÎîīıÏïŁłĽľÑñŃńŇňŅņÖöŐőÓóÒòÕõÔôøŒœŘřŚśŞşȘșŠšßŢţȚțŤťÞþÜüÚúÙùūŮůÛûÝýŸÿŹźŻżŽž
 
 - **Ä** U+00C4 (196) - LATIN CAPITAL LETTER A WITH DIAERESIS ⇒ A
 - **ä** U+00E4 (228) - LATIN SMALL LETTER A WITH DIAERESIS ⇒ a
@@ -32,6 +32,8 @@
 - **ď** U+010F (271) - LATIN SMALL LETTER D WITH CARON ⇒ d
 - **Ð** U+00D0 (208) - LATIN CAPITAL LETTER ETH ⇒ D
 - **ð** U+00F0 (240) - LATIN SMALL LETTER ETH ⇒ d
+- **Đ** U+0110 (272) - LATIN CAPITAL LETTER D WITH STROKE ⇒ D
+- **đ** U+0111 (273) - LATIN SMALL LETTER D WITH STROKE ⇒ d
 - **É** U+00C9 (201) - LATIN CAPITAL LETTER E WITH ACUTE ⇒ E
 - **é** U+00E9 (233) - LATIN SMALL LETTER E WITH ACUTE ⇒ e
 - **È** U+00C8 (200) - LATIN CAPITAL LETTER E WITH GRAVE ⇒ E
@@ -59,6 +61,8 @@
 - **ï** U+00EF (239) - LATIN SMALL LETTER I WITH DIAERESIS ⇒ i
 - **Ł** U+0141 (321) - LATIN CAPITAL LETTER L WITH STROKE ⇒ L
 - **ł** U+0142 (322) - LATIN SMALL LETTER L WITH STROKE ⇒ l
+- **Ľ** U+013D (317) - LATIN CAPITAL LETTER L WITH CARON ⇒ L
+- **ľ** U+013E (318) - LATIN SMALL LETTER L WITH CARON ⇒ l
 - **Ñ** U+00D1 (209) - LATIN CAPITAL LETTER N WITH TILDE ⇒ N
 - **ñ** U+00F1 (241) - LATIN SMALL LETTER N WITH TILDE ⇒ n
 - **Ń** U+0143 (323) - LATIN CAPITAL LETTER N WITH ACUTE ⇒ N

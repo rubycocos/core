@@ -1,12 +1,12 @@
-# encoding: utf-8
+###
+#  todo/check: use a module Alphabets with s to keep version
+#               and banner separate - why? why not?
 
-
-## todo/check: use a module Alphabets with s to keep version and banner separate - why? why not?
 
 class Alphabet
   MAJOR = 1    ## todo: namespace inside version or something - why? why not??
   MINOR = 0
-  PATCH = 1
+  PATCH = 2
   VERSION = [MAJOR,MINOR,PATCH].join('.')
 
   def self.version
